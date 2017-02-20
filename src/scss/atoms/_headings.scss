@@ -1,0 +1,31 @@
+h1 {
+  color: $dark-gray;
+  font-size: 2rem;
+  margin-bottom: $small-spacing/2;
+  font-family: $bold-font-family;
+  time {
+  	font-family: $thin-font-family;
+  	font-weight: normal;
+  	color: $light-gray;
+  	font-size: 1.8rem;
+  	padding-left: $small-spacing;
+  }
+  .sub-title {
+    color: lighten($light-gray, 30%);
+    font-family: $light-font-family;
+    font-size: 1.5rem;
+    padding-top: $small-spacing/2;
+  }
+}
+
+h2 {
+  color: $dark-gray;
+  font-size: 1.8rem;
+  margin-bottom: $small-spacing;
+}
+
+h3 {
+  color: $dark-gray;
+  font-size: 1.7rem;
+  margin-bottom: $small-spacing;
+}

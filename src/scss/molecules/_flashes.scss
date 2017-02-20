@@ -1,0 +1,19 @@
+.flash {
+  border-radius: $base-border-radius;
+  padding: $small-spacing;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: $base-spacing;
+  &.success {
+    color: $green;
+    background-color: lighten($green, 40%);
+  }
+  &.alert {
+    color: orange;
+    background-color: lighten(orange, 40%);
+  }
+  &.warning {
+    color: $red;
+    background-color: lighten($red, 40%);
+  }
+}

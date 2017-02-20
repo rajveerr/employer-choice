@@ -1,0 +1,52 @@
+/* items class */
+
+ul,
+ol {
+	margin: 0;
+}
+
+dl {
+  margin: 0 0 $base-spacing 0;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+ul {
+	list-style-type: initial;
+	margin-left: 3rem;
+}
+
+hr {
+    border-bottom: 1px solid #DDD;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: 1.5em 0;
+}
+
+.question-answer-list {
+	background-color: white;
+	// font-family: $semiBold-font-family;
+	color: lighten($dark-gray, 20%);
+	font-size: 1.5rem;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	dt {
+		padding: $small-spacing $small-spacing 0 $small-spacing;
+	}
+	dd {
+		padding: $small-spacing/4 $small-spacing $small-spacing $small-spacing;
+		color: lighten($dark-gray, 0);
+		border-bottom: 1px solid $lightest-gray;
+		font-family: $semiBold-font-family;
+		em {
+			display: block;
+		}
+	}
+}

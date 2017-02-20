@@ -1,0 +1,146 @@
+fieldset {
+  display: inline-block;
+  border-top: 1px dashed darken($lightest-gray, 10%);
+  margin: 0 0 $base-spacing;
+  padding: $small-spacing 0 0;
+  border-radius: 1px;
+  min-width: 100%;
+  .question {
+    margin-bottom: $base-spacing;
+    &:last-of-type {
+        margin-bottom: $small-spacing;
+    }
+  }
+}
+
+.question {
+  position: relative;
+  margin-bottom: $small-spacing*2;
+  .hint {
+    padding-top: .75em;
+    display: block;
+  }
+  .icon-info-circled {
+    font-size: 1.8rem;
+    position: relative;
+    left: 1rem;
+    color: darken($medium-gray, 12%);
+  }
+}
+
+.sub-question {
+  clear: both;
+  border-left: 4px solid $medium-gray;
+  padding-left: $small-spacing;
+  top: $small-spacing;
+  margin-bottom: $small-spacing;
+}
+
+.form-footer {
+  @include outer-container();
+  background-color: white;
+  padding: $small-spacing $base-spacing $small-spacing $base-spacing;
+  border-top: 1px solid darken($lightest-gray, 10%);
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  .primary-actions,
+  .secondary-actions {
+    display: block;
+    @extend %half-width;
+    .link-btn,
+    a {
+      padding-right: $small-spacing;
+      line-height: 3.5rem;
+    }
+  }
+  .primary-actions {
+    text-align: right;
+    float: right;
+  }
+}
+
+legend {
+  font-weight: $base-font-family;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+label {
+  font-family: $semiBold-font-family;
+  display: block;
+  color: lighten($dark-gray, 10%);
+  padding-bottom: $small-spacing/2;
+  span {
+    font-family: $thin-font-family;
+  }
+  &.error {
+    font-family: $thin-font-family;
+    color: $red;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: -2.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+.yes-no-choice label.error {
+  // right: -102%;
+}
+
+form label.error {
+    display: none;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  &.error {
+    // background-color: lighten($red, 51%)
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="search"] {
+  appearance: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+// input:focus:invalid,
+// textarea:focus:invalid,
+// select:focus:invalid,
+// select:focus:invalid {
+//   border-color: $red;
+//   outline: 0;
+// }
+
+%single-row-form {
+  label,
+  input,
+  select {
+    display: inline-block;
+    min-width: auto;
+  }
+  input {
+    border-color: lighten($light-gray, 60%);
+    margin-right: 0;
+      &:hover,
+      &:active {
+      border-color: lighten($light-gray, 50%);
+      }
+  }
+  button {
+    display: inline-block;
+      vertical-align: top;
+  }
+}

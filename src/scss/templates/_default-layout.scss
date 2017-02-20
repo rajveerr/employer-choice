@@ -1,0 +1,26 @@
+.main-body {
+  @include outer-container();
+  position: relative;
+}
+
+.page-component {
+	padding: $base-spacing $base-spacing 0;
+	&.with-top-padding {
+		padding-top: 50px;
+	}
+  @include media($above-wide) {
+      width: 50%;
+  }
+}
+
+.card {
+  @include outer-container;
+  border: 1px solid lighten($light-gray, 60%);
+  padding: $small-spacing;
+  margin: $small-spacing $small-spacing 0 $small-spacing;
+}
+
+
+.hidden {
+  display: none !important;
+}

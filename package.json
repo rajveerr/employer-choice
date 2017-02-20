@@ -1,0 +1,28 @@
+{
+  "name": "gulp-sass-bourbon-neat-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeredithU/gulp-sass-bourbon-neat-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeredithU/gulp-sass-bourbon-neat-boilerplate/issues"
+  },
+  "homepage": "https://github.com/MeredithU/gulp-sass-bourbon-neat-boilerplate#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.1.1",
+    "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2",
+    "node-refills": "^1.0.1"
+  }
+}

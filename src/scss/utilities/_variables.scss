@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'ProximaNovaThin';
+    src: url(fonts/proximaNova/proxima_nova_thin.ttf);
+}
+
+@font-face {
+    font-family: 'proximaNovaLight';
+    src: url(fonts/proximaNova/proxima_nova_light.ttf)
+}
+
+@font-face {
+    font-family: 'proximaNovaItalic';
+    src: url(fonts/proximaNova/proxima_nova_reg.ttf)
+}
+
+@font-face {
+    font-family: 'proximaNovaSbold';
+    src: url(fonts/proximaNova/proxima_nova_sbold.ttf)
+}
+
+@font-face {
+    font-family: 'proximaNovaBold';
+    src: url(fonts/proximaNova/proxima_nova_bold.ttf)
+}
+
+
+
+$thin: "proximaNovaThin";
+$light: "proximaNovaLight";
+$italic: "proximaNovaReg";
+$semiBold: "proximaNovaSbold";
+$bold: "proximaNovaBold";
+
+// Typography
+$thin-font-family: $thin, Helvetica, Arial, sans-serif;
+$light-font-family: $light, Helvetica, Arial, sans-serif;
+$base-font-family: $light-font-family;
+$italic-font-family: $italic, Helvetica, Arial, sans-serif;
+$semiBold-font-family: $semiBold, Helvetica, Arial, sans-serif;
+$bold-font-family: $bold, Helvetica, Arial, sans-serif;
+
+.font-thin {
+  font-family: $thin-font-family;
+}
+
+.font-italic {
+  font-family: $italic-font-family;
+}
+
+.font-light {
+  font-family: $base-font-family;
+}
+
+.font-semi-bold {
+  font-family: $semiBold-font-family;
+}
+
+.font-bold {
+  font-family: $bold-font-family;
+}
+
+// Font Sizes
+$base-font-size: 1.4rem;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 2px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Primary
+
+$dark-gray: #373737;
+$blue: #1474DB;
+$medium-blue: #00C2EF;
+$orange: #FA9806;
+$white: #fff;
+
+
+// Secondary
+$green: #8DC058;
+$red: #db1414;
+$medium-gray: #CFD4D6;
+$light-gray: #A0AAAE;
+$lightest-gray: #E9EFF0;
+
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $blue;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// layout
+$left-nav-width: $base-spacing*2.5;
+$drawer-menu-width: 300px;
+$drawer-link-width: 110px;

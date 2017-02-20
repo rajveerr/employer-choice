@@ -1,0 +1,78 @@
+button,
+input[type=submit],
+a.btn-link,
+a.btn-link:active,
+a.btn-link:visited {
+  position: relative;
+  padding: $small-spacing $base-spacing;
+  cursor: pointer;
+  background-color: $orange;
+  text-transform: uppercase;
+  font-size: $base-font-size;
+  font-family: $semiBold-font-family;
+  color: $white;
+  min-width: 10rem;
+  border: 0;
+  margin-right: $small-spacing/2;
+  text-transform: uppercase;
+  outline: none;
+  white-space: nowrap;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: lighten($orange, 10%);
+  }
+  &:active {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  }
+  &:disabled {
+    background-color: transparent;
+    color: $light-gray;
+    border: 1px solid $medium-gray;
+    cursor: not-allowed;
+    [class*="icono-"] {
+      color: $light-gray;
+    }
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+  &[hidden] {
+    display: none !important;
+  }
+}
+
+button.icon-right-open {
+  padding-right: 2.5em !important;
+  &:before {
+    position: absolute;
+    right: 1.1em;
+    top: .9em;
+  }
+}
+
+.btn-secondary {
+  background-color: darken($medium-gray, 20%);
+  color: $white;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: darken($medium-gray, 10%);
+  }
+  &.icon-left-open {
+   padding-left: 2.5em !important;
+   &:before {
+     position: absolute;
+     right: auto;
+     left: 1.1em;
+     top: .9em;
+   }
+  }
+}
+
+.btn-danger {
+  background-color: $red;
+  border-color: $red;
+  &:hover {
+  }
+}
