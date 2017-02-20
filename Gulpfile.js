@@ -27,18 +27,19 @@ gulp.task('images', function () {
 });
 
 // Live reload anytime a file changes
-gulp.task("watch", ["browserSync", "sass", "images", "templates"], function() {
+gulp.task("watch", ["browserSync", "sass", "templates"], function() {
 	gulp.watch("app/scss/**/*.scss", ["sass"]);
 	gulp.watch("dist/*.html").on("change", browserSync.reload);
 	gulp.watch('app/*.jade',['templates']);
-	gulp.watch('app/images/*',['images']);
+
 });
 
 //default task that's not used?
-// gulp.task('default', ['templates', 'images'], function () {
-//     browserSync({server: './dist'});
-//     gulp.watch('./app/*.jade', ['templates']);
-// });
+gulp.task('default', ['templates', 'images', 'watch'], function () {
+    browserSync({server: './dist'});
+    gulp.watch('./app/*.jade', ['templates']);
+		gulp.watch('app/images/*',['images']);
+});
 
 // Spin up a server
 gulp.task("browserSync", function() {
