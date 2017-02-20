@@ -10,6 +10,7 @@ var gulp = require("gulp"),
 		images = require('gulp-image');
 
 
+// Optimize and copy images
 gulp.task('images', function () {
   gulp.src('app/images/*')
     .pipe(images({
@@ -26,29 +27,17 @@ gulp.task('images', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
-// Live reload anytime a file changes
-gulp.task("watch", ["browserSync", "sass", "templates"], function() {
-	gulp.watch("app/scss/**/*.scss", ["sass"]);
-	gulp.watch("dist/*.html").on("change", browserSync.reload);
-	gulp.watch('app/*.jade',['templates']);
+// Copy fonts
+gulp.task('fonts', function() {
+  return gulp.src('app/fonts/**/*')
+    .pipe(gulp.dest('dist/css/fonts'))
+})
 
-});
-
-//default task that's not used?
-gulp.task('default', ['templates', 'images', 'watch'], function () {
-    browserSync({server: './dist'});
-    gulp.watch('./app/*.jade', ['templates']);
-		gulp.watch('app/images/*',['images']);
-});
-
-// Spin up a server
-gulp.task("browserSync", function() {
-	browserSync({
-		server: {
-			baseDir: "dist"
-		}
-	})
-});
+// Copy javascript
+gulp.task('javascript', function() {
+  return gulp.src('app/javascript/**/*')
+    .pipe(gulp.dest('dist/javascript'))
+})
 
 // Compile SASS files
 gulp.task("sass", function() {
@@ -69,5 +58,32 @@ gulp.task('templates', function() {
     return gulp.src('./app/*.jade')
         .pipe(jade())
         .pipe(gulp.dest('./dist/'))
-        // .pipe(reload({stream: true}));
+				.pipe(browserSync.reload({
+					stream: true
+				}))
+});
+
+// Live reload anytime a file changes
+gulp.task("watch", ["browserSync", "sass", "templates"], function() {
+	gulp.watch("app/scss/**/*.scss", ["sass"]);
+	gulp.watch('app/*.jade',['templates']);
+
+});
+
+//default gulp command
+gulp.task('default', ['sass', 'templates' ,'browserSync', 'watch'], function () {
+});
+
+// Gulp Build
+gulp.task('build', ['javascript', 'sass' ,'images', 'fonts'], function () {
+});
+
+
+// Spin up a server
+gulp.task("browserSync", function() {
+	browserSync({
+		server: {
+			baseDir: "dist"
+		}
+	})
 });
