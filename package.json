@@ -19,6 +19,7 @@
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
+    "gulp-image": "^2.7.5",
     "gulp-jade": "^1.1.0",
     "gulp-sass": "^2.1.1",
     "node-bourbon": "^4.2.3",
