@@ -86,7 +86,7 @@ $green: #8DC058;
 $red: #db1414;
 $medium-gray: #CFD4D6;
 $light-gray: #A0AAAE;
-$lightest-gray: #E9EFF0;
+$lightest-gray: #F8F8F8;
 
 
 // Font Colors
@@ -108,8 +108,3 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
-
-// layout
-$left-nav-width: $base-spacing*2.5;
-$drawer-menu-width: 300px;
-$drawer-link-width: 110px;

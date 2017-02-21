@@ -41,7 +41,9 @@
 @import "templates/default-layout";
 
 /* Pages */
-@import "pages/home";
+@import "pages/agent-verify";
+@import "pages/agent-dashboard";
+@import "pages/employer-dashboard";
 
 /* Icons */
 @import "molecules/icons";
@@ -66,7 +68,6 @@ body,
 .wrapper,
 #content {
   position: relative;
-	background-color: $lightest-gray;
 	overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
