@@ -22,6 +22,10 @@ p {
   margin: 0 0 $small-spacing;
 }
 
+strong {
+  font-family: $bold-font-family;
+}
+
 a {
   color: $action-color;
   text-decoration: none;
@@ -48,5 +52,5 @@ hr {
 	color: lighten($dark-gray, 20%);
 	font-size: 1.5rem;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  margin-bottom: $base-spacing;  
+  margin-bottom: $base-spacing;
 }

@@ -12,15 +12,24 @@ body.agent-welcome {
     display: inline-block;
     text-align: left;
     padding: $base-spacing;
-    min-width: 90%;
+    width: 90%;
+    min-height: 430px;
     h1 {
       margin-bottom: $small-spacing;
+      background: transparent url('../images/stars.png') no-repeat 0 0;
+      padding-top: 5rem;
     }
     @include media($above-small) {
-      min-width: 80%;
+      width: 80%;
+      padding: $base-spacing 4em $base-spacing 13em;
+      background: white url('../images/happy-duck.png') no-repeat 0 0;
     }
     @include media($above-mid) {
-      min-width: 60%;
+      width: 60%;
     }
+  }
+  .form-footer {
+    border-top: 2px dashed $lightest-gray;
+    margin-top: $base-spacing;
   }
 }

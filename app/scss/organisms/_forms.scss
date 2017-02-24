@@ -49,8 +49,7 @@ fieldset {
     @extend %half-width;
     .link-btn,
     a {
-      padding-right: $small-spacing;
-      line-height: 3.5rem;
+      padding-right: $small-spacing;      
     }
   }
   .primary-actions {
