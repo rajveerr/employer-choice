@@ -1,4 +1,4 @@
-body.agent-verify {
+body.agent-welcome {
   background-color: $lightest-gray;
   .wrapper {
     text-align: center;
@@ -10,22 +10,17 @@ body.agent-verify {
   .card-center {
     @extend %card;
     display: inline-block;
-    padding: 3em $small-spacing;
+    text-align: left;
+    padding: $base-spacing;
     min-width: 90%;
-    h1,
-    .input-and-button-container {
-      text-align: center;
-    }
     h1 {
       margin-bottom: $small-spacing;
     }
     @include media($above-small) {
       min-width: 80%;
-      padding: 4em $base-spacing;
     }
     @include media($above-mid) {
-      min-width: 40%;
-      padding: 4em $base-spacing;
+      min-width: 60%;
     }
   }
 }

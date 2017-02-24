@@ -43,11 +43,12 @@ a.btn-link:visited {
 }
 
 button.icon-right-open {
-  padding-right: 2.5em !important;
+  padding-right: 2.3em !important;
   &:before {
     position: absolute;
-    right: 1.1em;
-    top: .9em;
+    right: 1.4em;
+    top: 1.13em;
+    font-size: 1.7rem;
   }
 }
 
