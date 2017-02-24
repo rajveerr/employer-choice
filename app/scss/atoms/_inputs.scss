@@ -3,13 +3,13 @@ input[type='date'], input[type='password'], .file-upload,
 input[type='tel'], input[type='email'], input[type='search'], textarea, .control--radio, .control--checkbox {
   border: 0;
   background: $white;
-  font-family: $light-font-family;
+  font-family: $thin-font-family;
   color: lighten($dark-gray, 10%);
   padding: $small-spacing;
   min-height: 2rem;
-  font-size: 1.4rem;
+  font-size: 2rem;
   border-radius: 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
   &:hover{
     cursor: text;
   }
@@ -50,12 +50,6 @@ input:focus {
     left: 1rem;
     top: 1.2rem;
   }
-}
-
-input[type='text'], input[type='number'], input[type='tel'],
-input[type='date'], input[type='password'], input[type='file'],
-input[type='tel'], input[type='email'], input[type='search'], textarea {
-  font-family: $italic-font-family;
 }
 
 .control--radio.selected {

@@ -6,10 +6,10 @@ a.btn-link:visited {
   position: relative;
   padding: $small-spacing $base-spacing;
   cursor: pointer;
-  background-color: $orange;
+  background-color: $blue;
   text-transform: uppercase;
-  font-size: $base-font-size;
-  font-family: $semiBold-font-family;
+  font-size: 2rem;
+  font-family: $bold-font-family;
   color: $white;
   min-width: 10rem;
   border: 0;
@@ -20,10 +20,10 @@ a.btn-link:visited {
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: lighten($orange, 10%);
+    background-color: darken($blue, 10%);
   }
   &:active {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    box-shadow: inset 0 4px 8px 0 rgba(0,0,0,0.4);
   }
   &:disabled {
     background-color: transparent;

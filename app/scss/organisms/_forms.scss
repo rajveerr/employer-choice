@@ -15,6 +15,7 @@ fieldset {
 
 .question {
   position: relative;
+  display: inline-block;
   margin-bottom: $small-spacing*2;
   .hint {
     padding-top: .75em;
@@ -77,9 +78,8 @@ label {
     color: $red;
     position: absolute;
     z-index: 2;
-    right: 0;
-    bottom: -2.5rem;
-    font-size: 1.3rem;
+    left: 0;
+    bottom: -3.5rem;
   }
 }
 
