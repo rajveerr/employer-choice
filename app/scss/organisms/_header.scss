@@ -16,11 +16,12 @@
 		}
 }
 .aflac-logo {
-	width: 108px;
-	height: 49px;
-	margin: 0 auto;
+	width: 140px;
+	height: 60px;
 	background: transparent url('../images/retina-sprite.png') 0 no-repeat;
-	background-size: 132px 327px;
-	background-position: -8px -1px;
+	background-size: 136px 46px;
 	text-indent: -119988px;
+	.verify-agent & {
+		margin: $base-spacing auto $small-spacing auto;
+	}
 }

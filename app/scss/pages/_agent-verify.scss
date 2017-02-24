@@ -1,3 +1,24 @@
 body {
   background-color: $lightest-gray;
 }
+
+.wrapper {
+  text-align: center;
+  padding: $small-spacing;
+}
+
+.card-center {
+  @extend %card;
+  display: inline-block;
+  min-width: 90%;
+  h1,
+  .input-and-button-container {
+    text-align: center;
+  }
+  @include media($above-small) {
+    min-width: 80%;
+  }
+  @include media($above-mid) {
+    min-width: 40%;
+  }
+}

@@ -11,18 +11,13 @@ html(lang="en")
       h1(class='aflac-logo') Aflac : Employer Choice Tool
       #contentLayer
       #content
-        .wrapper.page-component
-          h1 Employer Choice Tool
-          .question
-            label(for='username') Agent ID
-            input#username(type='text', required='required', data-msg-required='Please enter your username', data-msg='Please enter a valid username', minlength="2")
-      .form-footer.homepage
-        span.primary-actions
-          button#primaryBtn.icon-right-open Start
-        span.secondary-actions
-          a(href='https://www.aflac.com/individuals/file-a-claim/default.aspx') File via fax or mail
-
-
+        .wrapper
+          .card-center
+            h1 Employer Choice Tool
+            .input-and-button-container
+              label.hidden(for='username') Agent ID
+              input#username(type="text", required='required', data-msg-required='Please enter your Agent ID', data-msg='Please enter a valid Agent ID', minlength="2", placeholder="Agent ID")
+              button#primaryBtn.icon-right-open Go
 
 script(src='javascript/vendor/jquery-3.1.0.min.js')
 script(src='javascript/vendor/jquery-ui.min.js')

@@ -6,7 +6,6 @@ input[type='tel'], input[type='email'], input[type='search'], textarea, .control
   font-family: $light-font-family;
   color: lighten($dark-gray, 10%);
   padding: $small-spacing;
-  min-width: 100%;
   min-height: 2rem;
   font-size: 1.4rem;
   border-radius: 0;
