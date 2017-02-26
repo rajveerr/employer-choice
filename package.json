@@ -1,29 +1,34 @@
 {
-  "name": "gulp-sass-bourbon-neat-boilerplate",
+  "name": "employer-choice",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "A prototype for Employer Choice tool",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp-sass": "^2.3.2",
+    "node-sass": "^4.5.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MeredithU/gulp-sass-bourbon-neat-boilerplate.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MeredithU/gulp-sass-bourbon-neat-boilerplate/issues"
-  },
-  "homepage": "https://github.com/MeredithU/gulp-sass-bourbon-neat-boilerplate#readme",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
     "gulp-image": "^2.7.5",
     "gulp-jade": "^1.1.0",
-    "gulp-sass": "^2.1.1",
-    "node-bourbon": "^4.2.3",
-    "node-neat": "^1.7.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.5",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^2.0.0-beta.0",
     "node-refills": "^1.0.1"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajveerr/employer-choice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajveerr/employer-choice/issues"
+  },
+  "homepage": "https://github.com/rajveerr/employer-choice#readme"
 }
