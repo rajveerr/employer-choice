@@ -4,10 +4,16 @@
 }
 
 .page-component {
-	padding: $base-spacing $base-spacing 0;
+	padding: $small-spacing $small-spacing 0;
 	&.with-top-padding {
 		padding-top: 50px;
 	}
+  @include media($above-small) {
+    padding: $base-spacing $base-spacing 0;
+  }
+  @include media($mid) {
+      width: 80%;
+  }
   @include media($above-wide) {
       width: 50%;
   }

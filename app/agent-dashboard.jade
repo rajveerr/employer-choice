@@ -11,16 +11,12 @@ html(lang="en")
     include includes/_flash.jade  
     #content
       .wrapper.page-component 
-        h1 Employer Choice Tool
-        .question
-          label(for='username') Agent ID
-          input#username(type='text', required='required', data-msg-required='Please enter your username', data-msg='Please enter a valid username', minlength="2")
-    .form-footer.homepage
-      span.primary-actions
-        button#primaryBtn.icon-right-open Start
-      span.secondary-actions
-        a(href='https://www.aflac.com/individuals/file-a-claim/default.aspx') File via fax or mail
-
+        h1 Shirley's Dashboard
+        .input-and-button-container
+          label.hidden(for='username') Agent ID
+          input#employerName(type="text", required='required', data-msg-required='Please enter employer name', data-msg='Please enter a valid name', minlength="2", placeholder="New employer name")
+          button#BtnNewEmployer.icon-right-open 
+            span Start
 
 
 script(src='javascript/vendor/jquery-3.1.0.min.js')

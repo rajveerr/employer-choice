@@ -11,12 +11,12 @@ a.btn-link:visited {
   font-size: 2rem;
   font-family: $bold-font-family;
   color: $white;
-  min-width: 10rem;
   border: 0;
   margin-right: $small-spacing/2;
   text-transform: uppercase;
   outline: none;
   white-space: nowrap;
+  min-height: 5.2rem;
   &:hover,
   &:focus {
     text-decoration: none;
@@ -39,16 +39,6 @@ a.btn-link:visited {
   }
   &[hidden] {
     display: none !important;
-  }
-}
-
-button.icon-right-open {
-  padding-right: 2.3em !important;
-  &:before {
-    position: absolute;
-    right: 1.4em;
-    top: 1.13em;
-    font-size: 1.7rem;
   }
 }
 
@@ -75,5 +65,17 @@ button.icon-right-open {
   background-color: $red;
   border-color: $red;
   &:hover {
+  }
+}
+
+@include media($above-small) {
+  .icon-right-open {
+    padding-right: 2.3em !important;
+    &:before {
+      position: absolute;
+      right: 1.4em;
+      top: 1.13em;
+      font-size: 1.7rem;
+    }
   }
 }

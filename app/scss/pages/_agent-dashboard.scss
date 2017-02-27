@@ -1,0 +1,15 @@
+.agent-dashboard {
+  #BtnNewEmployer {
+    position: absolute;
+    right: 0;
+  }
+  @include media($above-small) {
+    .input-and-button-container {
+      display: block;
+    }
+    #employerName {
+      width: 91%;
+    }
+
+  }
+}

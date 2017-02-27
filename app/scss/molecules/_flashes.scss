@@ -1,7 +1,6 @@
 .flash {
   position: relative;
-  padding: $small-spacing $small-spacing $small-spacing 2rem;
-  margin-bottom: $base-spacing;
+  padding: $small-spacing $small-spacing $small-spacing 2rem;  
   color: $gray;
   &.success {
     background-color: lighten($green, 40%);
