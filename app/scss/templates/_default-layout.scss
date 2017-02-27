@@ -5,17 +5,18 @@
 
 .page-component {
 	padding: $small-spacing $small-spacing 0;
+  margin: 0 auto;
 	&.with-top-padding {
 		padding-top: 50px;
 	}
   @include media($above-small) {
     padding: $base-spacing $base-spacing 0;
   }
-  @include media($mid) {
+  @include media($above-mid) {
       width: 80%;
   }
   @include media($above-wide) {
-      width: 50%;
+      width: 60%;
   }
 }
 

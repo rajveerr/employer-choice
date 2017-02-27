@@ -17,7 +17,47 @@ html(lang="en")
           input#employerName(type="text", required='required', data-msg-required='Please enter employer name', data-msg='Please enter a valid name', minlength="2", placeholder="New employer name")
           button#BtnNewEmployer.icon-right-open 
             span Start
-
+        .table-container
+          table.table-minimal
+            thead
+              tr
+                th Employers
+                th Choices complete 
+                th 70% POPS
+                th Submitted
+            tbody
+              tr
+                td 3Blades
+                td.dot.yes
+                  span
+                td.dot
+                  span
+                td.dot
+                  span
+              tr
+                td Abate Solutions
+                td.dot.yes
+                  span
+                td.dot.yes
+                  span
+                td.dot.yes
+                  span
+              tr
+                td Apogee Legal
+                td.dot
+                  span
+                td.dot
+                  span
+                td.dot
+                  span
+              tr
+                td Bay Dynamics
+                td.dot.yes
+                  span
+                td.dot
+                  span
+                td.dot
+                  span
 
 script(src='javascript/vendor/jquery-3.1.0.min.js')
 script(src='javascript/vendor/jquery-ui.min.js')

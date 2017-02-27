@@ -1,15 +1,26 @@
 .agent-dashboard {
-  #BtnNewEmployer {
-    position: absolute;
-    right: 0;
+  .input-and-button-container {
+    border-left: 3px solid $blue;
+    button {
+      position: absolute;
+      right: 0;
+    }
+    margin-bottom: $base-spacing;
   }
   @include media($above-small) {
     .input-and-button-container {
       display: block;
+      input {
+        width: 91%;
+      }
     }
-    #employerName {
-      width: 91%;
+  }
+  .table-minimal {
+    th {
+      text-align: center;
+      &:first-child {
+        text-align: left;
+      }
     }
-
   }
 }
