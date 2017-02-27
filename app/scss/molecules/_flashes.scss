@@ -1,19 +1,39 @@
 .flash {
-  border-radius: $base-border-radius;
-  padding: $small-spacing;
-  text-align: center;
-  font-size: 1.6rem;
+  position: relative;
+  padding: $small-spacing $small-spacing $small-spacing 2rem;
   margin-bottom: $base-spacing;
+  color: $gray;
   &.success {
-    color: $green;
     background-color: lighten($green, 40%);
   }
   &.alert {
-    color: orange;
-    background-color: lighten(orange, 40%);
+    background-color: lighten(orange, 46%);
   }
   &.warning {
-    color: $red;
     background-color: lighten($red, 40%);
+  }
+	a {
+		color: lighten($gray, 15%);
+    font-size: 1.6rem;
+    margin-right: $small-spacing;
+    text-decoration: underline;
+    @include media($above-small) {
+      margin-right: $base-spacing;
+      &:first-child {
+        margin-left: $base-spacing;
+      }
+    }
+	}
+  p,
+  .link-options {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .icon-cancel {
+    position: absolute;
+    right: $small-spacing;
+    top: 13%;
+    font-size: 2.4rem;
+    color: lighten(gray, 25%);
   }
 }
