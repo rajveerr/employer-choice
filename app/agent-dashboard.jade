@@ -6,21 +6,19 @@ html(lang="en")
   meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8")
   meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
   link(href='css/screen.css', rel='stylesheet')
-  body.verify-agent
-    form#container(action='selection.html', novalidate) 
-      include includes/_header-and-main-nav.jade 
-      #contentLayer
-      #content
-        .wrapper.page-component
-          h1 Employer Choice Tool
-          .question
-            label(for='username') Agent ID
-            input#username(type='text', required='required', data-msg-required='Please enter your username', data-msg='Please enter a valid username', minlength="2")
-      .form-footer.homepage
-        span.primary-actions
-          button#primaryBtn.icon-right-open Start
-        span.secondary-actions
-          a(href='https://www.aflac.com/individuals/file-a-claim/default.aspx') File via fax or mail
+  body.agent-dashboard
+    include includes/_header-and-main-nav.jade
+    #content
+      .wrapper.page-component 
+        h1 Employer Choice Tool
+        .question
+          label(for='username') Agent ID
+          input#username(type='text', required='required', data-msg-required='Please enter your username', data-msg='Please enter a valid username', minlength="2")
+    .form-footer.homepage
+      span.primary-actions
+        button#primaryBtn.icon-right-open Start
+      span.secondary-actions
+        a(href='https://www.aflac.com/individuals/file-a-claim/default.aspx') File via fax or mail
 
 
 

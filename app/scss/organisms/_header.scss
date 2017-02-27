@@ -1,9 +1,7 @@
 .header-container {
-		width: 100%;
-		height: 50px;
-		background-color: white;
-		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+		background-color: $lightest-gray;
 		z-index: 4;
+		overflow: hidden;
 		.icon-menu {
 			float: left;
 			font-size: 2.5rem;
@@ -16,12 +14,46 @@
 		}
 }
 .aflac-logo {
-	width: 140px;
+	width: 116px;
 	height: 60px;
 	background: transparent url('../images/retina-sprite.png') 0 no-repeat;
-	background-size: 136px 46px;
+  background-size: 113px 36px;
 	text-indent: -119988px;
-	.verify-agent & {
+	margin: 0 auto;
+	@include media($above-small) {
+		position: absolute;
+		top: $small-spacing/2;
+		bottom: 0;
+		left: $small-spacing;
+	}
+	.agent-verify &,
+	.agent-welcome & {
+		position: static;
+		background-size: 136px 46px;
 		margin: $base-spacing auto 0 auto;
+	}
+}
+.global-nav {
+	text-align: center;
+	margin-bottom: $small-spacing;
+	@include media($above-small) {
+		float: right;
+		text-align: right;
+		width: 80%;
+		padding: $base-spacing $small-spacing $base-spacing 0;
+		margin-bottom: 0;
+	}
+	ul {
+		display: inline-block;
+		font-size: 1.6rem;
+		text-align: right;
+		margin-left: 0;
+	}
+	li {
+		display: inline-block;
+		padding: 0 $small-spacing;
+	}
+	a {
+		color: $gray;
 	}
 }
