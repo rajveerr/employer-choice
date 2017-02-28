@@ -1,19 +1,18 @@
 .agent-dashboard {
   .input-and-button-container {
+    margin-bottom: $base-spacing;
     border-left: 3px solid $blue;
+    input {
+      width: 91%;
+      font-size: 2rem;
+    }
     button {
       position: absolute;
       right: 0;
     }
-    margin-bottom: $base-spacing;
   }
-  @include media($above-small) {
-    .input-and-button-container {
-      display: block;
-      input {
-        width: 91%;
-      }
-    }
+  .input-and-button-container {
+    display: block;
   }
   .table-minimal {
     th {

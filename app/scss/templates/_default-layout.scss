@@ -4,6 +4,7 @@
 }
 
 .page-component {
+  background-color: white;
   h1 {
     padding-top: $small-spacing;
   }
@@ -35,6 +36,10 @@
   margin: $small-spacing $small-spacing 0 $small-spacing;
 }
 
+.card-gray {
+    padding: $base-spacing;
+    background-color: darken($lightest-gray, 1%)
+}
 
 .hidden {
   display: none !important;

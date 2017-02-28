@@ -1,5 +1,5 @@
 .flash {
-  padding: $small-spacing 0;
+  padding: 2.3rem 0;
   color: $gray;
   .wrap {
     position: relative;
@@ -8,7 +8,7 @@
     background-color: lighten($green, 40%);
   }
   &.alert {
-    background-color: lighten(orange, 46%);
+    background-color: lighten(yellow, 46%);
   }
   &.warning {
     background-color: lighten($red, 40%);

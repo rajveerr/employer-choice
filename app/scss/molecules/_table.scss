@@ -14,10 +14,11 @@ $table-background: $lightest-gray;
 $table-hover-background: lighten($table-background, 1%);
 $table-stripe-background: darken($table-background, 4);
 $table-stripe-background-hover: darken($table-stripe-background, 5);
-$table-padding: $small-spacing 1em;
+$table-padding: $small-spacing*2 1em;
 
 .table-container {
   background-color: $table-background;
+  padding: $small-spacing/2 $small-spacing;
   @include media($above-small) {
     padding: $small-spacing $base-spacing;
   }

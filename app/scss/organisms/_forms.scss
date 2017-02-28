@@ -15,7 +15,7 @@ fieldset {
 
 .question {
   position: relative;
-  display: inline-block;
+  display: block;
   margin-bottom: $small-spacing*2;
   .hint {
     padding-top: .75em;
@@ -32,14 +32,13 @@ fieldset {
 .sub-question {
   clear: both;
   border-left: 4px solid $medium-gray;
-  padding-left: $small-spacing;
-  top: $small-spacing;
-  margin-bottom: $small-spacing;
+  padding: $small-spacing/2 0 $small-spacing/2 $small-spacing;
+  margin: $base-spacing 0 $small-spacing $small-spacing;
 }
 
 .form-footer {
   @include outer-container();
-  padding: $small-spacing $base-spacing $small-spacing $base-spacing;
+  padding: $small-spacing 0;
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -47,9 +46,12 @@ fieldset {
   .secondary-actions {
     display: block;
     @extend %half-width;
+    margin-right: 0;
     .link-btn,
     a {
-      padding-right: $small-spacing;      
+      display: inline-block;
+      padding-right: $small-spacing;
+      margin-top: $small-spacing;
     }
   }
   .primary-actions {
@@ -68,7 +70,7 @@ label {
   font-family: $semiBold-font-family;
   display: block;
   color: lighten($dark-gray, 10%);
-  padding-bottom: $small-spacing/2;
+  padding-bottom: $small-spacing;
   span {
     font-family: $thin-font-family;
   }
@@ -80,10 +82,6 @@ label {
     left: 0;
     bottom: -3.5rem;
   }
-}
-
-.yes-no-choice label.error {
-  // right: -102%;
 }
 
 form label.error {
@@ -120,6 +118,25 @@ textarea {
 //   border-color: $red;
 //   outline: 0;
 // }
+
+.question-tip {
+  position: relative;
+  padding: $small-spacing/2 0 0 4rem;
+  font-family: $light-font-family;
+  font-size: $base-font-size-mobile;
+  margin-top: $small-spacing;
+  color: lighten($base-font-color, 35%);
+  &:before {
+    position: absolute;
+    font-size: 4rem;
+    left: -.4rem;
+    top: 0.4rem;
+    color: orange;
+  }
+  @include media($above-mid) {
+    width: 45%;
+  }
+}
 
 %single-row-form {
   label,

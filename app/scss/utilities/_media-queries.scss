@@ -4,6 +4,6 @@ $small: new-breakpoint(min-width 10px max-width 480);
 $mid: new-breakpoint(min-width 481px max-width 1024);
 $wide: new-breakpoint(min-width 1025px max-width 1600);
 
-$above-small: new-breakpoint(min-width 480px);
+$above-small: new-breakpoint(min-width 400px);
 $above-mid: new-breakpoint(min-width 1024px);
 $above-wide: new-breakpoint(min-width 1600px);
