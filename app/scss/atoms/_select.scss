@@ -27,10 +27,11 @@ select {
   appearance: none;
   box-sizing: border-box;
   transition: border-color $base-duration $base-timing;
-  // box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 0;
-
+  @include media($small) {
+    max-width: 21.5rem;
+  }
   &:focus {
     border-color: $action-color;
     outline: none;

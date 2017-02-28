@@ -68,6 +68,12 @@ a.btn-link:visited {
   }
 }
 
+@include media($small) {
+  .icon-right-open:before {
+    display: none !important;
+  }
+}
+
 @include media($above-small) {
   .icon-right-open {
     padding-right: 2.3em !important;

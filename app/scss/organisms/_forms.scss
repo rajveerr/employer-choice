@@ -133,7 +133,7 @@ textarea {
     top: 0.4rem;
     color: orange;
   }
-  @include media($above-mid) {
+  @include media($above-small) {
     width: 45%;
   }
 }

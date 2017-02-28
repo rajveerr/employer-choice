@@ -5,6 +5,7 @@
 
 .page-component {
   background-color: white;
+  padding: $small-spacing;
   h1 {
     padding-top: $small-spacing;
   }
@@ -18,9 +19,6 @@
 .header-container .wrap {
   margin: 0 auto;
   padding: 0 $small-spacing;
-  @include media($small) {
-    padding: 0;
-  }
   @include media($above-mid) {
       width: 80%;
   }
