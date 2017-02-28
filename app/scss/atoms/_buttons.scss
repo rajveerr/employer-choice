@@ -9,7 +9,7 @@ a.btn-link:visited {
   background-color: $blue;
   text-transform: uppercase;
   font-size: 2rem;
-  font-family: $bold-font-family;
+  font-family: $light-font-family;
   color: $white;
   border: 0;
   margin-right: $small-spacing/2;
@@ -69,7 +69,7 @@ a.btn-link:visited {
 }
 
 @include media($small) {
-  .icon-right-open:before {
+  .primary-actions .icon-right-open:before {
     display: none !important;
   }
 }

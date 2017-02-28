@@ -37,7 +37,7 @@
     min-width: 0;
     background: transparent;
     color: darken($medium-gray, 30%);
-    @extend .icon-cancel-circled;
+    @extend .icon-cancel;
     font-size: 2.5rem;
   }
   .ui-button-text {

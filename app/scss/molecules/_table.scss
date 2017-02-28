@@ -19,6 +19,7 @@ $table-padding: $small-spacing*2 1em;
 .table-container {
   background-color: $table-background;
   padding: $small-spacing/2 $small-spacing;
+  overflow-x: scroll;
   @include media($above-small) {
     padding: $small-spacing $base-spacing;
   }
@@ -82,7 +83,11 @@ $table-padding: $small-spacing*2 1em;
     font-weight: normal;
     margin-left: $small-spacing;
   }
-
+  &.benefits {
+    tbody td {
+      white-space: nowrap;
+    }
+  }
 }
 
 .form-table {
