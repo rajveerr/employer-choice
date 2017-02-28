@@ -8,7 +8,7 @@ html(lang="en")
   link(href='css/screen.css', rel='stylesheet')
   body.agent-dashboard
     include includes/_header-and-main-nav.jade
-    include includes/_flash.jade
+    include includes/_flash.jade 
     #content
       .wrapper.page-component 
         h1 Shirley's Dashboard
@@ -86,11 +86,39 @@ html(lang="en")
                 th Student Loan Repayment
                 td 31¢ 
                   abbr(title='Per employee per month') pe/mth
-                  
-
+      
+      #dialog.dialog(title='Tip of the Day!')
+          h3 If you’re competing against Colonial, concentrate on the following benefits with Aflac:
+          p Are you sure you want to decline?
+          .form-footer
+            span.primary-actions
+              button.btn-secondary Next
+            span.secondary-actions
+              a(href="") Close 
+              
 script(src='javascript/vendor/jquery-3.1.0.min.js')
 script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
-  $("#container").validate(); 
+  $("#container").validate();
+  
+  $( "#dialog" ).dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 10
+    },
+    hide: {
+      effect: "explode",
+      duration: 10
+    }
+  });
+  
+  $('#opener').click(function(){
+    $( "#dialog" ).dialog('open');
+  })
+  
+  $('.close-banner').click(function(){
+    $('#flashBanner').fadeOut( "fast" );
+  }) 
