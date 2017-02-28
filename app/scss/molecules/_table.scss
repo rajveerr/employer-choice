@@ -20,8 +20,9 @@ $table-padding: $small-spacing 1em;
 .table-container {
   background-color: $table-background;
   @include media($above-small) {
-    padding: $small-spacing;
+    padding: $small-spacing $base-spacing;
   }
+  margin-bottom: $base-spacing;
 }
 .table-minimal {
   border-collapse: separate;
@@ -29,7 +30,10 @@ $table-padding: $small-spacing 1em;
   min-width: 100%;
   background-color: $table-background;
   caption {
-    background-color: white;
+    color: $gray;
+    text-align: left;
+    margin: $small-spacing 0;
+    font-size: 2rem;
   }
   thead {
     th,
@@ -40,7 +44,7 @@ $table-padding: $small-spacing 1em;
       font-family: $base-font-family;
       color: $gray;
       &:first-child {
-        padding-left: $small-spacing;
+        padding-left: 0;
       }
     }
   }
@@ -48,14 +52,21 @@ $table-padding: $small-spacing 1em;
   tbody {
     tr:hover > td, tr:hover > th {
       background-color: $table-hover-background;
-      cursor: pointer;
     }
-    tr:first-child td {
+    tr:first-child td,
+    tr:first-child th {
       border-top-color: transparent;
     }
+    th {
+      font-family: $semiBold-font-family;
+    }
+    th,
     td {
       border-bottom: 0;
       border-top: 1px dashed $table-border-color;
+      vertical-align: middle;
+    }
+    td {
       line-height: $base-line-height;
       padding: $table-padding;
       button {
