@@ -1,7 +1,9 @@
 .flash {
-  position: relative;
-  padding: $small-spacing $small-spacing $small-spacing 2rem;  
+  padding: $small-spacing 0;
   color: $gray;
+  .wrap {
+    position: relative;
+  }
   &.success {
     background-color: lighten($green, 40%);
   }
@@ -30,9 +32,10 @@
   }
   .icon-cancel {
     position: absolute;
-    right: $small-spacing;
-    top: 13%;
+    right: 1%;
+    top: -7px;
     font-size: 2.4rem;
     color: lighten(gray, 25%);
+    cursor: pointer;
   }
 }

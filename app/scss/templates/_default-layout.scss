@@ -4,13 +4,21 @@
 }
 
 .page-component {
-	padding: $small-spacing $small-spacing 0;
-  margin: 0 auto;
+  h1 {
+    padding-top: $small-spacing;
+  }
 	&.with-top-padding {
 		padding-top: 50px;
 	}
-  @include media($above-small) {
-    padding: $base-spacing $base-spacing 0;
+}
+
+.page-component,
+.flash .wrap,
+.header-container .wrap {
+  margin: 0 auto;
+  padding: 0 $small-spacing;
+  @include media($small) {
+    padding: 0;
   }
   @include media($above-mid) {
       width: 80%;
