@@ -1,0 +1,99 @@
+doctype html
+html(lang="en")
+  head
+  title
+    | Aflac : Employer Choice
+  meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8") 
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+  link(href='css/screen.css', rel='stylesheet')
+  body.select-free
+    include includes/_header-and-main-nav.jade
+    #content
+      .wrapper.page-component 
+        h1 Start by picking your FREE FOR ALL benefit choice
+        p.sub-heading You can choose any ONE of the following free benefits for ALL your employees.
+          span.note * After your Aflac representative reaches 70% of your employees
+        form(action='select-value-added-benefits.html')
+          .card-gray
+            label.hidden(for='freeBenefit') Please select a free benefit you would like to offer to the employees
+            label.control.control--radio
+              input#freeBenefitHealthAdvocate.radio(type='radio', name='freeBenefitRadio', value='freeBenefitHealthAdvocate', required='required', data-msg='Please choose a benefit')
+              .control__indicator
+              p 
+                span.h4 Health Advocate
+                span.price FREE!
+                span.productDesc 24/7 toll-free access to an assigned Personal Health Advocate providing expert assistance with navigating the complex health care and insurance systems
+                  span#healthAdvocateDialogOpner.see-more
+                span.bullet 
+                  strong &bull; Best for:  
+                  | Families, Ongoing or Complex Medical Situations
+                span.bullet &bull; 79% of employers pick this benefit
+            hr
+            label.control.control--radio
+              input#freeBenefitTelemedicine.radio(type='radio', name='freeBenefitRadio', value='freeBenefitTelemedicine')
+              .control__indicator
+              p 
+                span.h4 Telemedicine
+                span.price FREE!
+                span.productDesc Connects your employees with a board-certified, state-licensed medical provider online 24/7 to receive personalized treatment
+                  span.see-more
+                span.bullet 
+                  strong &bull; Best for:  
+                  | Active. busy lifestyles, families, Commuters or those not within a short distance to hospitals or primary care physicians, vacationers, traveling businesspeople, away at college
+                span.bullet &bull; 64% of employers pick this benefit
+            hr
+            label.control.control--radio
+              input#freeBenefitLegalServices.radio(type='radio', name='freeBenefitRadio', value='freeBenefitLegalServices')
+              .control__indicator
+              p 
+                span.h4 Legal Services
+                span.price FREE!
+                span.productDesc Employees will be able to manage more than 100 legal needs, such as preparing a will, managing a divorce or dealing with customer complaints
+                  span.see-more
+                span.bullet 
+                  strong &bull; Best for:  
+                  | Families, Active, Busy Lifestyle
+                span.bullet &bull; 59% of employers pick this benefit
+            hr
+            label.control.control--radio
+              input#freeBenefitCareerAndTalentCoaching.radio(type='radio', name='freeBenefitRadio', value='freeBenefitCareerAndTalentCoaching')
+              .control__indicator
+              p 
+                span.h4 Career and Talent Coaching
+                span.price FREE!
+                span.productDesc Empower your talent.  The new generation of workers and your tenured employees are seeking mentors to accelerate their careers and identify opportunities at their current jobs that bring satisfaction
+                  span.see-more
+                span.bullet 
+                  strong &bull; Best for:  
+                  | All employees
+                span.bullet &bull; 55% of employers pick this benefit
+            label.error(for='freeBenefitRadio')
+            
+          .form-footer
+              span.primary-actions
+                button#primaryBtn.icon-right-open(type='submit', disabled='disabled') Next
+              span.secondary-actions.link-btn
+                a(href="employer-questions.html") Back 
+        include includes/_product-health-advocate.jade
+script(src='javascript/vendor/jquery-3.1.0.min.js')
+script(src='javascript/vendor/jquery-ui.min.js')
+script(src='javascript/vendor/jquery.validate.min.js')
+script(src='javascript/global-scripts.js')
+script.
+  $("#content").validate();
+  
+  $( ".dialog" ).dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 10
+    },
+    hide: {
+      effect: "explode",
+      duration: 10
+    }
+  });
+  
+  $('#healthAdvocateDialogOpner').click(function(){
+    $( "#healthAdvocateDialog" ).dialog('open');
+  })

@@ -1,0 +1,52 @@
+.select-free {
+  .control {
+    display: block;
+    margin-right: 0;
+    position: relative;
+    margin-top: 0;
+    min-height: 1.8rem;
+    font-size: 1.8rem;
+    .h4 {
+        font-family: $base-font-family;
+        font-size: 2.4rem;
+    }
+    .price {
+      position: relative;
+      top: -3px;
+      left: 1rem;
+      color: orange;
+      font-family: $semiBold-font-family;
+    }
+    p {
+      margin-left: $small-spacing;
+    }
+    .productDesc,
+    .bullet {
+      display: block;
+    }
+    .productDesc {
+      padding: 0.8rem 0 $small-spacing 0;
+    }
+    .bullet {
+      padding: 0 0 $small-spacing/2 $small-spacing/2;
+    }
+    strong {
+      font-family: $light-font-family;
+    }
+    .see-more {
+      position: relative;
+      left: 1rem;
+  		@extend .icon-dot-3;
+  		&:before {
+  			position: absolute;
+        width: 4rem;
+        height: 4rem;
+  			font-family: "fontello";
+        font-size: 2.5rem;
+  		}
+    }
+  }
+  .control__indicator {
+      top: 40%;
+  }
+}

@@ -9,7 +9,7 @@
 }
 
 @font-face {
-    font-family: 'proximaNovaItalic';
+    font-family: 'proximaNovaRegular';
     src: url(fonts/proximaNova/proxima_nova_reg.ttf)
 }
 
@@ -27,24 +27,19 @@
 
 $thin: "proximaNovaThin";
 $light: "proximaNovaLight";
-$italic: "proximaNovaReg";
+$regular: "proximaNovaRegular";
 $semiBold: "proximaNovaSbold";
 $bold: "proximaNovaBold";
 
 // Typography
 $thin-font-family: $thin, Helvetica, Arial, sans-serif;
 $light-font-family: $light, Helvetica, Arial, sans-serif;
-$base-font-family: $light-font-family;
-$italic-font-family: $italic, Helvetica, Arial, sans-serif;
+$base-font-family: $regular, Helvetica, Arial, sans-serif;
 $semiBold-font-family: $semiBold, Helvetica, Arial, sans-serif;
 $bold-font-family: $bold, Helvetica, Arial, sans-serif;
 
 .font-thin {
   font-family: $thin-font-family;
-}
-
-.font-italic {
-  font-family: $italic-font-family;
 }
 
 .font-light {
