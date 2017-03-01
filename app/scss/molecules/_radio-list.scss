@@ -1,5 +1,6 @@
 .radio-list {
-  .control__indicator {
+  .control__indicator,
+  input[type='radio'] {
       top: 40%;
       left: $base-spacing;
   }
@@ -56,5 +57,8 @@
   }
   hr {
     margin: 0;
+  }
+  .error {
+    left: $base-spacing*4;
   }
 }

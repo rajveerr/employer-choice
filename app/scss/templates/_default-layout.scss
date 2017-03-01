@@ -35,11 +35,12 @@
 }
 
 .card-gray {
-    padding: $base-spacing;
-    background-color: darken($lightest-gray, 1%);
-    .radio-list & {
-      padding: 0;
-    }
+  position: relative;
+  padding: $base-spacing;
+  background-color: darken($lightest-gray, 1%);
+  .radio-list & {
+    padding: 0;
+  }
 }
 
 .hidden {

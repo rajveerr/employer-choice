@@ -16,7 +16,7 @@ fieldset {
 .question {
   position: relative;
   display: block;
-  margin-bottom: $small-spacing*2;
+  margin-bottom: $base-spacing;
   .hint {
     padding-top: .75em;
     display: block;
@@ -75,12 +75,13 @@ label {
   font-family: $semiBold-font-family;
   display: block;
   color: lighten($dark-gray, 10%);
-  padding-bottom: $small-spacing;
+  padding-bottom: $small-spacing/2;
   span {
     font-family: $thin-font-family;
   }
   &.error {
     font-family: $thin-font-family;
+    font-size: 1.6rem;
     color: $red;
     position: absolute;
     z-index: 2;

@@ -7,7 +7,7 @@ html(lang="en")
   meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
   link(href='css/screen.css', rel='stylesheet')
   body.agent-verify
-    form#container(action='agent-welcome.html', novalidate) 
+    form#verifyAgent(action='agent-welcome.html', novalidate) 
       h1(class='aflac-logo') Aflac : Employer Choice Tool
       #contentLayer
       #content
@@ -24,4 +24,4 @@ script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
-  $("#container").validate(); 
+  $("#verifyAgent").validate(); 

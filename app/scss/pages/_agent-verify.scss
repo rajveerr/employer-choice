@@ -27,5 +27,8 @@ body.agent-verify {
       min-width: 40%;
       padding: 4em $base-spacing;
     }
-  }  
+  }
+  label.error {
+    left: 17%;
+  }
 }

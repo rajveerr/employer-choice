@@ -12,7 +12,7 @@ html(lang="en")
     #content
       .wrapper.page-component 
         h1 Shirley's Dashboard
-        form.input-and-button-container(action="employer-questions.html")
+        form#startEmployee.input-and-button-container(action="employer-questions.html", novalidate='novalidate')
           label.hidden(for='username') Agent ID
           input#employerName(type="text", required='required', data-msg-required='Please enter employer name', data-msg='Please enter a valid name', minlength="2", placeholder="New employer name")
           button#BtnNewEmployer.icon-right-open 
@@ -95,7 +95,7 @@ script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
-  $("#content").validate();
+  $("#startEmployee").validate();
   
   $( ".dialog" ).dialog({
     autoOpen: false,

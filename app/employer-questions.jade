@@ -13,7 +13,7 @@ html(lang="en")
         h1 
           input#employerName.inline-edit(type="text", required='required', data-msg-required='Please enter employer name', data-msg='Please enter a valid name', minlength="2", value="Diggigi Innovations", placeholder="New employer name")
           a.icon-pencil#editEmployerName(href='javascript:void(0)')
-        form(action='select-free-benefits.html')
+        form#employerQuestions(action='free-benefits-selection.html', novalidate='novalidate')
           .card-gray
             .question
               label Number of employees
@@ -56,7 +56,7 @@ script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
-  $("#content").validate();
+  $("#employerQuestions").validate();
   
   // show/hide Major Medical 'Yes' follow up question
   $('#majorMedicalRadioYes').click(function(){
