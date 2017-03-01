@@ -7,7 +7,8 @@
   bottom: 0;
   left: 0;
   background: rgba(0,0,0,0.6);
-  padding-top: 10%;
+  padding-top: $base-spacing;
+  overflow-y: scroll;
   .ui-dialog-titlebar,
   .ui-dialog-content {
     background-color: $lightest-gray;
@@ -30,21 +31,36 @@
 
   }
   .ui-dialog-titlebar-close {
-    display: none;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    margin-top: 3px;
+    font-size: 3rem;
+    top: 2rem;
+    right: 2rem;
     padding: 0;
     min-width: 0;
     min-height: 0;
     background: transparent;
     color: darken($medium-gray, 30%);
     @extend .icon-cancel;
-    font-size: 2.5rem;
+    @include media($above-small) {
+      top: 3.8rem;
+      right: 4rem;
+      font-size: 4rem;
+    }
   }
   .ui-button-text {
     display: none;
   }
-
+  h3 {
+    width: 100%;
+    font-size: 1.8rem;
+    font-family: $semiBold-font-family;
+    margin: 0 auto $base-spacing auto;
+    text-align: center;
+    padding: $small-spacing 0 0;
+    border-top: 2px dotted darken($lightest-gray, 10%);
+    @include media($above-small) {
+      width: 80%;
+      font-size: 2rem;
+    }
+  }
 }

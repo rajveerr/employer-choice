@@ -4,7 +4,7 @@ a.btn-link,
 a.btn-link:active,
 a.btn-link:visited {
   position: relative;
-  padding: $small-spacing $base-spacing;
+  padding: $small-spacing/2 $small-spacing;
   cursor: pointer;
   background-color: $blue;
   text-transform: uppercase;
@@ -16,7 +16,11 @@ a.btn-link:visited {
   text-transform: uppercase;
   outline: none;
   white-space: nowrap;
-  min-height: 5.2rem;
+  min-height: 4.6rem;
+  @include media($above-small) {
+    padding: $small-spacing $base-spacing;
+    min-height: 5.2rem;
+  }
   &:hover,
   &:focus {
     text-decoration: none;

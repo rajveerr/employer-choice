@@ -1,5 +1,4 @@
 /* items class */
-
 ul,
 ol {
 	margin: 0;
@@ -29,6 +28,48 @@ hr {
     border-right: none;
     border-top: none;
     margin: 1.5em 0;
+}
+
+.tips-graphis-list {
+	position: relative;
+	@include outer-container();
+	font-size: 1.5rem;
+	line-height: 1.9rem;
+	list-style: none;
+	text-align: center;
+	margin-left: 0;
+	.item {
+		@include span-columns(24);
+		margin-bottom: $base-spacing;
+		@include media($mid) {
+				@include span-columns(6);
+				@include omega;
+		}
+		@include media($wide) {
+				@include span-columns(4);
+				@include omega;
+		}
+		&.robust-list {
+			margin-bottom: 5rem;
+		}
+		img {
+			display: block;
+			zoom: 40%;
+			margin: 0 auto;
+			margin-bottom: 1rem;
+		}
+	}
+	.blue {
+		color: $blue;
+	}
+	.blue,
+	.reg {
+		display: block;
+		font-family: $semiBold-font-family;
+	}
+	.small {
+		font-size: 1.3rem;
+	}
 }
 
 .question-answer-list {

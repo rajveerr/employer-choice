@@ -59,9 +59,9 @@ fieldset {
     float: right;
   }
   .ui-dialog & {
-    padding: $base-spacing 0 0;
+    padding: $small-spacing 0 0;
     margin-top: $base-spacing;
-    border-top: 2px dashed $lightest-gray;
+    border-top: 2px dotted darken($lightest-gray, 10%);
   }
 }
 

@@ -17,22 +17,23 @@
 		}
 }
 .aflac-logo {
-	width: 116px;
-	height: 60px;
-	background: transparent url('../images/retina-sprite.png') 0 no-repeat;
-  background-size: 113px 36px;
+	width: 130px;
+	height: 40px;
+	background: transparent url('../images/retina-sprite.png') no-repeat 0 0;
+  background-size: 120px 684px;
 	text-indent: -119988px;
-	margin: 0 auto;
+	margin: $small-spacing auto $small-spacing/2 auto;
 	@include media($above-small) {
 		position: absolute;
-		top: $small-spacing/2;
+		top: 2.3rem;
 		bottom: 0;
 		left: 13px;
+		margin: 0;
 	}
 	.agent-verify &,
 	.agent-welcome & {
 		position: static;
-		background-size: 136px 46px;
+		background-size: 120px 684px;
 		margin: $base-spacing auto 0 auto;
 	}
 }
