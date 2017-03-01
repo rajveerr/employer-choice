@@ -27,7 +27,11 @@ p {
 }
 
 strong {
-  font-family: $bold-font-family;
+  font-family: $semiBold-font-family;
+  &.title {
+    display: block;
+    margin-bottom: $small-spacing;
+  }
 }
 
 a {

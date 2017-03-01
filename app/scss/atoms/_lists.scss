@@ -30,7 +30,20 @@ hr {
     margin: 1.5em 0;
 }
 
-.tips-graphis-list {
+.check-list {
+	list-style: none;
+	li {
+		position: relative;
+		@extend .icon-check;
+		&:before {
+			position: absolute;;
+			font-family: "fontello";
+			left: -2rem;
+		}
+	}
+}
+
+.graphis-list {
 	position: relative;
 	@include outer-container();
 	font-size: 1.5rem;
@@ -42,10 +55,6 @@ hr {
 		@include span-columns(24);
 		margin-bottom: $base-spacing;
 		@include media($mid) {
-				@include span-columns(6);
-				@include omega;
-		}
-		@include media($wide) {
 				@include span-columns(4);
 				@include omega;
 		}
@@ -58,6 +67,9 @@ hr {
 			margin: 0 auto;
 			margin-bottom: 1rem;
 		}
+	}
+	&.light-content {
+		margin: $base-spacing*2 0 $base-spacing;
 	}
 	.blue {
 		color: $blue;

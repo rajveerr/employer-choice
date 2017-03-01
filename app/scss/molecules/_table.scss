@@ -60,6 +60,9 @@ $table-padding: $small-spacing*2 1em;
     }
     th {
       font-family: $semiBold-font-family;
+      &:first-of-type {
+        padding-left: $small-spacing;
+      }
     }
     th,
     td {
@@ -74,7 +77,7 @@ $table-padding: $small-spacing*2 1em;
         outline: none;
         padding: 0.3em 1em;
       }
-      &:first-child {
+      &:first-of-type {
         padding-left: $small-spacing;
       }
     }

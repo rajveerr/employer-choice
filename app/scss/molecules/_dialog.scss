@@ -50,6 +50,26 @@
   .ui-button-text {
     display: none;
   }
+  hr.head {
+    margin: -1rem 20% 3rem 20%;
+    border-bottom: 2px dotted darken($lightest-gray, 10%);
+  }
+  ul {
+    margin-bottom: $base-spacing;
+    li {
+      margin-bottom: $small-spacing/2;
+    }
+  }
+  .product-redlines {
+    margin-bottom: $base-spacing;
+  }
+  hr.content {
+    margin: $small-spacing 0;
+    border-bottom: 2px dotted darken($lightest-gray, 10%);
+  }
+  p {
+    font-family: $semiBold-font-family;
+  }
   h3 {
     width: 100%;
     font-size: 1.8rem;
@@ -62,5 +82,8 @@
       width: 80%;
       font-size: 2rem;
     }
+  }
+  h4 {
+    margin-bottom: $small-spacing/2;
   }
 }
