@@ -97,3 +97,10 @@ script.
   $('#healthAdvocateDialogOpner').click(function(){
     $( "#healthAdvocateDialog" ).dialog('open');
   })
+  
+  $('.control').click(function() {    
+    if ($("input[name='freeBenefitRadio']").is(':checked')) {
+      $('.control').removeClass('checked');
+      $(this).addClass('checked');
+    } 
+  })
