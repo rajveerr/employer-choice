@@ -65,11 +65,9 @@ html {
   box-sizing: border-box;
 }
 
-body,
-.wrapper,
-#content {
+body {
   position: relative;
-	overflow-y: scroll;
+	background-color: white;
   -webkit-overflow-scrolling: touch;
 }
 

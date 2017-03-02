@@ -3,18 +3,7 @@
   position: relative;
 }
 
-.page-component {
-  background-color: white;
-  padding: $small-spacing;
-  h1 {
-    padding-top: $small-spacing;
-  }
-	&.with-top-padding {
-		padding-top: 50px;
-	}
-}
-
-.page-component,
+.wrapper,
 .flash .wrap,
 .header-container .wrap {
   margin: 0 auto;
@@ -24,6 +13,29 @@
   }
   @include media($above-wide) {
       width: 60%;
+  }
+}
+
+.wrapper {
+  @include outer-container;
+  padding: $small-spacing;
+}
+
+.content-head {
+  h1 {
+    padding-top: $small-spacing;
+  }
+}
+
+.primary-content {
+  @include media($wide) {
+    @include span-columns(9);
+  }
+}
+
+.secondary-content {
+  @include media($wide) {
+    @include span-columns(3);
   }
 }
 
@@ -56,6 +68,10 @@
   }
   h4 {
     margin-bottom: $small-spacing/2;
+  }
+  @include media($above-mid) {
+    padding: $small-spacing $small-spacing $base-spacing;
+    margin-top: 0;
   }
 }
 

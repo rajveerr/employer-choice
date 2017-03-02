@@ -1,6 +1,6 @@
 body.agent-welcome {
   background-color: $lightest-gray;
-  .wrapper {
+  .primary-content {
     text-align: center;
     padding: $small-spacing;
   }
@@ -9,8 +9,7 @@ body.agent-welcome {
   }
   .card-center {
     @extend %card;
-    display: inline-block;
-    text-align: left;
+    margin: 0 auto;
     padding: $base-spacing;
     width: 90%;
     min-height: 430px;

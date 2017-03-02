@@ -1,6 +1,6 @@
 body.agent-verify {
   background-color: $lightest-gray;
-  .wrapper {
+  .primary-content {
     text-align: center;
     padding: $small-spacing;
   }
@@ -9,7 +9,7 @@ body.agent-verify {
   }
   .card-center {
     @extend %card;
-    display: inline-block;
+    margin: 0 auto;
     padding: 3em $small-spacing;
     min-width: 90%;
     h1,
