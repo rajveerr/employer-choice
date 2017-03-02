@@ -35,7 +35,7 @@
 }
 
 .secondary-content {
-  @include media($wide) {
+  @include media($above-mid) {
     @include span-columns(3);
   }
 }
@@ -64,15 +64,21 @@
   background-color: lighten($blue, 36%);
   color: $blue;
   margin-top: $base-spacing;
-  section {
-    @extend %half-width;
-  }
   h4 {
     margin-bottom: $small-spacing/2;
+  }
+  .free-section,
+  .paid-section {
+    @extend %half-width;
   }
   @include media($above-mid) {
     padding: $small-spacing $small-spacing $base-spacing;
     margin-top: 0;
+    .free-section,
+    .paid-section {
+      @include span-columns(12);
+      margin-bottom: $base-spacing;
+    }
   }
 }
 
