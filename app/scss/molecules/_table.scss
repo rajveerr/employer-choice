@@ -44,9 +44,6 @@ $table-padding: $small-spacing*2 1em;
       text-align: left;
       font-family: $base-font-family;
       color: $gray;
-      &:first-child {
-        padding-left: 0;
-      }
     }
   }
 
@@ -132,5 +129,69 @@ td.dot {
   }
   &.yes span {
     background-color: $blue;
+  }
+}
+
+
+.table-summary {
+  background-color: transparent;
+  padding: 0 $small-spacing/2;
+  margin-bottom: $base-spacing*2;
+  thead {
+    th, td {
+      padding: 0 1.8rem;
+    }
+    tr:last-of-type th {
+      padding-bottom: $small-spacing;
+    }
+    th {
+      font-family: $light-font-family;
+      color: black;
+      font-size: 2.6rem;
+      padding: $small-spacing/2 1.8rem 2rem;
+    }
+    .title {
+      font-size: 1.6rem;
+    }
+  }
+  tbody {
+    tr:hover > td, tr:hover > th {
+      background-color: transparent;
+    }
+    tr:last-of-type {
+      th, td {
+        border-bottom: 1px solid $table-border-color;
+      }
+    }
+    th {
+      font-family: $thin-font-family;
+      font-size: 2.2rem;
+      text-align: left;
+      color: $gray;
+    }
+    th, td {
+      border-style: solid;
+      &:first-of-type {
+        padding-left: 1.8rem;
+        border-top: 1px solid $table-border-color !important;
+      }
+    }
+  }
+  .title {
+    font-family: $thin-font-family;
+    padding-top: $small-spacing;
+  }
+  .price {
+    font-family: $base-font-family;
+    text-align: right;
+    color: orange;
+  }
+  .grey {
+    display: inline-block;
+    color: $gray;
+    padding: 0 $small-spacing/2;
+  }
+  .total {
+    padding-left: $small-spacing;
   }
 }

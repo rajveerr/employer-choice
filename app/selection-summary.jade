@@ -1,0 +1,131 @@
+doctype html
+html(lang="en")
+  head
+  title
+    | Aflac : Employer Choice
+  meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8") 
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+  link(href='css/screen.css', rel='stylesheet')
+  body.selection-summary
+    include includes/_header-and-main-nav.jade
+    .wrapper
+      .content-head
+        h1 Summary
+        p.sub-heading Here’s what you have picked! Find out how this is going to help grow your organization in future.
+      form#vasBenefitsSummary(action='confirmation.html', novalidate='novalidate')        
+        .primary-content
+          table.table-minimal.table-summary
+            thead
+              tr
+                td.title(colspan='2') FREE FOR ALL Benefit
+              tr
+                th Telemedicine
+                td.price.has-plus FREE!
+              tr
+                td.title(colspan='2') New All Employee Benefits
+              tr
+                th Care.com
+                td.price.has-plus 16¢ pe/mth
+              tr
+                th Career and Talent Coaching
+                td.price 24¢ pe/mth
+            tbody
+              tr
+                th Per employee per month 
+                td.price.pepp-total 40¢
+              tr
+                th Total premium per month
+                td.price.total-premium 
+                  span#totalEmployees.grey 38
+                  span.grey *
+                  span#peppTotal.grey 40¢
+                  span.grey =
+                  span#totalPremiumAmount.total $15.2
+        
+        h2 Help us engage with your employees (POPS)
+        p.sub-heading Chose the best option for an Aflac representative to reach 70% of your employees. We want to make sure each one of them is encouraged to keep a healthy lifestyle.
+        
+        .radio-checkbox-list.engagement-choice
+          label.hidden(for='popsEngagement') Please select the made of engagament for Aflac agent to engage with your employees
+          label.control.control--checkbox
+            input#popsEngagementGroupEmail.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementGroupEmail', required='required', data-msg='Please select the made of engagament for Aflac agent to engage with your employees')
+            .control__indicator
+            p 
+              span.h4 Group email
+              span.productDesc We will share Aflac benefits information via a group Email
+          hr
+          label.control.control--checkbox
+            input#popsEngagementOfficeVisit.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementOfficeVisit')
+            .control__indicator
+            p 
+              span.h4 Office visit
+              span.productDesc Come to our office. We will provide space to schedule appointments with employees.
+          hr
+          label.control.control--checkbox
+            input#popsEngagementTeleconferenceOrWebcasts.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementTeleconferenceOrWebcasts')
+            .control__indicator
+            p 
+              span.h4 Teleconference/Webcasts
+              span.productDesc Connect through teleconference or webcasts remotely
+          hr
+          label.control.control--checkbox
+            input#popsEngagementPaycheckAttachment.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementPaycheckAttachment')
+            .control__indicator
+            p 
+              span.h4 Paycheck attachment
+              span.productDesc Provide information on benefits attached to the paychecks
+        
+        .form-footer
+            span.primary-actions
+              button#primaryBtn(type='submit') Confirm
+            span.secondary-actions.link-btn
+              a(href="employer-questions.html") Back 
+      include includes/_product-health-advocate.jade
+script(src='javascript/vendor/jquery-3.1.0.min.js')
+script(src='javascript/vendor/jquery-ui.min.js')
+script(src='javascript/vendor/jquery.validate.min.js')
+script(src='javascript/global-scripts.js')
+script.
+  $("#vasBenefitsSummary").validate();
+  
+  $( ".dialog" ).dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 10
+    },
+    hide: {
+      effect: "explode",
+      duration: 10
+    }
+  });
+  
+  $('#healthAdvocateDialogOpner').click(function(){
+    $( "#healthAdvocateDialog" ).dialog('open');
+  })
+  
+  
+  $('#vasBenefitsSelection input').on('change', function() {        
+    var checkedValues = $('#vasBenefitsSelection input:checkbox:checked').each(function() {
+      return this;
+    }).get();
+    
+    // Add selected benefits to summary
+    $('.vas-section').show();
+    var elements = $();
+    for(x = 0; x < checkedValues.length; x++) {
+      elements = elements.add('<li>' + $(checkedValues[x]).parent().find('.h4').text() + '</li>');
+    }
+    $('#vasBenefitChosen').empty();
+    $('#vasBenefitChosen').append(elements);
+    if(checkedValues.length == 0) {
+      $('.vas-section').hide();
+    }
+    
+    // highlight row by adding 'checked' class
+    if($(this).prop('checked')) {      
+      $(this).parent().addClass('checked');
+    } else {
+      $(this).parent().removeClass('checked');
+    }
+  })

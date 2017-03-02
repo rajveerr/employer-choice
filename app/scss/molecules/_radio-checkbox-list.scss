@@ -1,4 +1,7 @@
 .radio-checkbox-list {
+  &.engagement-choice {
+    padding: 0 $small-spacing/2;
+  }
   .control__indicator,
   input[type='radio'],
   input[type='checkbox'], {
@@ -31,6 +34,7 @@
     }
     .h4 {
         font-family: $base-font-family;
+        color: $dark-gray;
         font-size: 2.4rem;
     }
     .price {
