@@ -18,7 +18,7 @@ html(lang="en")
           .card-gray
             label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
             label.control.control--checkbox
-              input#vasBenefitStudentLoanRepayment.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitStudentLoanRepayment', required='required', data-msg='Please choose the benefits for your employees')
+              input#vasBenefitStudentLoanRepayment.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitStudentLoanRepayment')
               .control__indicator
               p 
                 span.h4 Student Loan Repayment
@@ -57,7 +57,7 @@ html(lang="en")
                 span.bullet &bull; 79% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#freeBenefitLegalServices.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitLegalServices')
+              input#vasBenefitLegalServices.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitLegalServices')
               .control__indicator
               p 
                 span.h4 Legal Services
@@ -70,7 +70,7 @@ html(lang="en")
                 span.bullet &bull; 59% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#freeBenefitCareerAndTalentCoaching.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitCareerAndTalentCoaching')
+              input#vasBenefitCareerAndTalentCoaching.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitCareerAndTalentCoaching')
               .control__indicator
               p 
                 span.h4 Career and Talent Coaching
@@ -81,12 +81,15 @@ html(lang="en")
                   strong &bull; Best for:  
                   | All employees
                 span.bullet &bull; 55% of employers pick this benefit
-            label.error(for='vasBenefitRadio')
-        .card-blue.secondary-content#benefitChosenCard(style='display: none')
+        label.error(for='vasBenefitRadio')
+        .card-blue.secondary-content#benefitChosenCard
             .free-section
               h4 Free Benefit
               ul#freeBenefitChosen
-                li Telemedicine            
+                li Telemedicine
+            .vas-section(style='display: none')
+              h4 VAS Benefit
+              ul#vasBenefitChosen
         .form-footer
             span.primary-actions
               button#primaryBtn.icon-right-open(type='submit') Next
@@ -116,14 +119,21 @@ script.
     $( "#healthAdvocateDialog" ).dialog('open');
   })
   
-  $('.control').click(function() {    
-    if ($("input[name='vasBenefitCheckbox']").is(':checked')) {
-      $('.control').removeClass('checked');
-      $(this).addClass('checked');
-      
-      // show chosen benefit
-      $('#benefitChosenCard').show();
-      $('#freeBenefitChosen li').remove();
-      $('#freeBenefitChosen').append('<li>' + $('.control.checked .h4').text() + '</li>')
+  $('#vasBenefitsSelection input').on('change', function() {
+    
+    var checkedValues = $('#vasBenefitsSelection input:checkbox:checked').each(function() {
+      return this;
+    }).get();
+    
+    $('.vas-section').show();
+    var elements = $();
+    for(x = 0; x < checkedValues.length; x++) {
+      console.log();
+      elements = elements.add('<li>' + $(checkedValues[x]).parent().find('.h4').text() + '</li>');
+    }
+    $('#vasBenefitChosen').empty();
+    $('#vasBenefitChosen').append(elements);
+    if(checkedValues.length == 0) {
+      $('.vas-section').hide();
     } 
   })

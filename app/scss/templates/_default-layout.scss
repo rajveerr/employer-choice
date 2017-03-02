@@ -68,14 +68,21 @@
     margin-bottom: $small-spacing/2;
   }
   .free-section,
-  .paid-section {
+  .vas-section {
     @extend %half-width;
+    ul {
+      margin-left: 2.4rem;
+      @extend .check-list;
+    }
+    li {
+      margin-bottom: $small-spacing/2;
+    }
   }
   @include media($above-mid) {
     padding: $small-spacing $small-spacing $base-spacing;
     margin-top: 0;
     .free-section,
-    .paid-section {
+    .vas-section {
       @include span-columns(12);
       margin-bottom: $base-spacing;
     }
