@@ -1,0 +1,66 @@
+doctype html
+html(lang="en")
+  head
+  title
+    | Aflac : Employer Choice
+  meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8") 
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+  link(href='css/screen.css', rel='stylesheet')
+  body.selection-summary
+    include includes/_header-and-main-nav.jade
+    .wrapper
+      .content-head
+        h1 Congratulations!
+        p.sub-heading Your Aflac agent will follow up with to make sure you get the best of chosen products as soon as possible.
+      
+        
+        
+      include includes/_product-health-advocate.jade
+script(src='javascript/vendor/jquery-3.1.0.min.js')
+script(src='javascript/vendor/jquery-ui.min.js')
+script(src='javascript/vendor/jquery.validate.min.js')
+script(src='javascript/global-scripts.js')
+script.
+  $("#vasBenefitsSummary").validate();
+  
+  $( ".dialog" ).dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 10
+    },
+    hide: {
+      effect: "explode",
+      duration: 10
+    }
+  });
+  
+  $('#healthAdvocateDialogOpner').click(function(){
+    $( "#healthAdvocateDialog" ).dialog('open');
+  })
+  
+  
+  $('#vasBenefitsSelection input').on('change', function() {        
+    var checkedValues = $('#vasBenefitsSelection input:checkbox:checked').each(function() {
+      return this;
+    }).get();
+    
+    // Add selected benefits to summary
+    $('.vas-section').show();
+    var elements = $();
+    for(x = 0; x < checkedValues.length; x++) {
+      elements = elements.add('<li>' + $(checkedValues[x]).parent().find('.h4').text() + '</li>');
+    }
+    $('#vasBenefitChosen').empty();
+    $('#vasBenefitChosen').append(elements);
+    if(checkedValues.length == 0) {
+      $('.vas-section').hide();
+    }
+    
+    // highlight row by adding 'checked' class
+    if($(this).prop('checked')) {      
+      $(this).parent().addClass('checked');
+    } else {
+      $(this).parent().removeClass('checked');
+    }
+  })
