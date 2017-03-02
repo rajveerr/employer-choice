@@ -119,21 +119,28 @@ script.
     $( "#healthAdvocateDialog" ).dialog('open');
   })
   
-  $('#vasBenefitsSelection input').on('change', function() {
-    
+  
+  $('#vasBenefitsSelection input').on('change', function() {        
     var checkedValues = $('#vasBenefitsSelection input:checkbox:checked').each(function() {
       return this;
     }).get();
     
+    // Add selected benefits to summary
     $('.vas-section').show();
     var elements = $();
     for(x = 0; x < checkedValues.length; x++) {
-      console.log();
       elements = elements.add('<li>' + $(checkedValues[x]).parent().find('.h4').text() + '</li>');
     }
     $('#vasBenefitChosen').empty();
     $('#vasBenefitChosen').append(elements);
     if(checkedValues.length == 0) {
       $('.vas-section').hide();
-    } 
+    }
+    
+    // highlight row by adding 'checked' class
+    if($(this).prop('checked')) {      
+      $(this).parent().addClass('checked');
+    } else {
+      $(this).parent().removeClass('checked');
+    }
   })
