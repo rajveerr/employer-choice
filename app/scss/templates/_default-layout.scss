@@ -43,6 +43,22 @@
   }
 }
 
+.card-blue {
+  @include outer-container;
+  border: 5px solid $blue;
+  position: relative;
+  padding: $base-spacing;
+  background-color: lighten($blue, 36%);
+  color: $blue;
+  margin-top: $base-spacing;
+  section {
+    @extend %half-width;
+  }
+  h4 {
+    margin-bottom: $small-spacing/2;
+  }
+}
+
 .hidden {
   display: none !important;
 }
