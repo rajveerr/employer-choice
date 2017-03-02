@@ -1,6 +1,7 @@
-.radio-list {
+.radio-checkbox-list {
   .control__indicator,
-  input[type='radio'] {
+  input[type='radio'],
+  input[type='checkbox'], {
     top: 40%;
     left: 1.8rem;
     @include media($above-small) {

@@ -10,19 +10,45 @@ html(lang="en")
     include includes/_header-and-main-nav.jade
     .wrapper
       .content-head
-        h1 Start by picking your FREE FOR ALL benefit choice
-        p.sub-heading You can choose any ONE of the following free benefits for ALL your employees.
-          span.note * After your Aflac representative reaches 70% of your employees
-      form#freeBenefitsSelection(action='vas-selection.html', novalidate='novalidate')        
+        h1 Choose additional ALL EMPLOYEE benefits
+        p.sub-heading You’ve picked “Telemedicine” as your FREE FOR ALL benefit.
+        p.sub-heading You can also choose as many of these Aflac group plan benefits for ALL your employees, regardless of whether they select other Aflac products.
+      form#vasBenefitsSelection(action='confirm-selection.html', novalidate='novalidate')        
         .primary-content
           .card-gray
-            label.hidden(for='freeBenefit') Please select a free benefit you would like to offer to the employees
-            label.control.control--radio
-              input#freeBenefitHealthAdvocate.radio(type='radio', name='freeBenefitRadio', value='freeBenefitHealthAdvocate', required='required', data-msg='Please choose a free benefit')
+            label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
+            label.control.control--checkbox
+              input#vasBenefitStudentLoanRepayment.radio(type='checkbox', name='vasBenefitRadio', value='vasBenefitStudentLoanRepayment', required='required', data-msg='Please choose the benefits for your employees')
+              .control__indicator
+              p 
+                span.h4 Student Loan Repayment
+                span.price 24¢ pe/mth
+                span.productDesc Aflac’s partner Peanut Butter makes it easy for you to offer student loan repayment to attract and retain the most talented Millennial employees
+                  span.see-more
+                span.bullet 
+                  strong &bull; Best for:  
+                  | Millennials, college students or graduates, parents of students
+                span.bullet &bull; 48% of employers pick this benefit
+            hr
+            label.control.control--checkbox
+              input#vasBenefitCareDotCom.radio(type='checkbox', name='vasBenefitRadio', value='vasBenefitCareDotCom')
+              .control__indicator
+              p 
+                span.h4 Care.com
+                span.price 16¢ pe/mth
+                span.productDesc Lets employees manage all their family care needs 24/7, such as nannies, day care, tutors, dog-sitters/walkers, home companions, personal care services
+                  span.see-more
+                span.bullet 
+                  strong &bull; Best for:  
+                  | Parents, boomers, sandwich generation, adults with aging parents
+                span.bullet &bull; 57% of employers pick this benefit
+            hr
+            label.control.control--checkbox
+              input#vasBenefitHealthAdvocate.radio(type='checkbox', name='vasBenefitRadio', value='vasBenefitHealthAdvocate')
               .control__indicator
               p 
                 span.h4 Health Advocate
-                span.price FREE!
+                span.price 19¢ pe/mth
                 span.productDesc 24/7 toll-free access to an assigned Personal Health Advocate providing expert assistance with navigating the complex health care and insurance systems
                   span#healthAdvocateDialogOpner.see-more
                 span.bullet 
@@ -30,25 +56,12 @@ html(lang="en")
                   | Families, Ongoing or Complex Medical Situations
                 span.bullet &bull; 79% of employers pick this benefit
             hr
-            label.control.control--radio
-              input#freeBenefitTelemedicine.radio(type='radio', name='freeBenefitRadio', value='freeBenefitTelemedicine')
-              .control__indicator
-              p 
-                span.h4 Telemedicine
-                span.price FREE!
-                span.productDesc Connects your employees with a board-certified, state-licensed medical provider online 24/7 to receive personalized treatment
-                  span.see-more
-                span.bullet 
-                  strong &bull; Best for:  
-                  | Active. busy lifestyles, families, Commuters or those not within a short distance to hospitals or primary care physicians, vacationers, traveling businesspeople, away at college
-                span.bullet &bull; 64% of employers pick this benefit
-            hr
-            label.control.control--radio
-              input#freeBenefitLegalServices.radio(type='radio', name='freeBenefitRadio', value='freeBenefitLegalServices')
+            label.control.control--checkbox
+              input#freeBenefitLegalServices.radio(type='checkbox', name='vasBenefitRadio', value='vasBenefitLegalServices')
               .control__indicator
               p 
                 span.h4 Legal Services
-                span.price FREE!
+                span.price $2 pe/mth
                 span.productDesc Employees will be able to manage more than 100 legal needs, such as preparing a will, managing a divorce or dealing with customer complaints
                   span.see-more
                 span.bullet 
@@ -56,19 +69,19 @@ html(lang="en")
                   | Families, Active, Busy Lifestyle
                 span.bullet &bull; 59% of employers pick this benefit
             hr
-            label.control.control--radio
-              input#freeBenefitCareerAndTalentCoaching.radio(type='radio', name='freeBenefitRadio', value='freeBenefitCareerAndTalentCoaching')
+            label.control.control--checkbox
+              input#freeBenefitCareerAndTalentCoaching.radio(type='checkbox', name='vasBenefitRadio', value='vasBenefitCareerAndTalentCoaching')
               .control__indicator
               p 
                 span.h4 Career and Talent Coaching
-                span.price FREE!
+                span.price 24¢ pe/mth
                 span.productDesc Empower your talent.  The new generation of workers and your tenured employees are seeking mentors to accelerate their careers and identify opportunities at their current jobs that bring satisfaction
                   span.see-more
                 span.bullet 
                   strong &bull; Best for:  
                   | All employees
                 span.bullet &bull; 55% of employers pick this benefit
-            label.error(for='freeBenefitRadio')
+            label.error(for='vasBenefitRadio')
         .card-blue.secondary-content#benefitChosenCard(style='display: none')
             .free-section
               h4 Free Benefit
@@ -85,7 +98,7 @@ script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
-  $("#freeBenefitsSelection").validate();
+  $("#vasBenefitsSelection").validate();
   
   $( ".dialog" ).dialog({
     autoOpen: false,

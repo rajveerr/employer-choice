@@ -1,6 +1,8 @@
 .control {
   cursor: pointer;
   margin-top: $small-spacing/2;
+  padding-left: 4rem;
+  margin-right: $small-spacing*2;
   input {
     position: absolute;
     z-index: -1;
@@ -18,7 +20,6 @@
   font-family: $thin-font-family;
   font-size: 2rem;
   display: inline-block;
-  margin-right: $small-spacing*3;
 }
 
 .control__indicator {
@@ -27,24 +28,24 @@
   left: 0;
   height: 34px;
   width: 34px;
-  border: 4px solid lighten($base-font-color, 15%);
-  background-color: white;
-}
-
-.control--radio .control__indicator {
   border-radius: 50%;
+  border: 4px solid lighten($base-font-color, 35%);
+  background-color: white;
 }
 
 .control {
   &:hover input ~ .control__indicator {
-    background: #ccc;
+    border: 4px solid $base-font-color;
+  }
+  &:hover .control__indicator:before {
+    color: $base-font-color;
   }
   input {
     &:focus ~ .control__indicator {
-      background: #ccc;
+      // background: #ccc;
     }
     &:checked ~ .control__indicator {
-      // background: #2aa1c0;
+      border: 4px solid $base-font-color;
     }
   }
   &:hover input:not([disabled]):checked ~ .control__indicator {
@@ -76,27 +77,40 @@
   }
 }
 
+.control--checkbox {
+  .control__indicator:before {
+    content: '+';
+    font-family: $semiBold-font-family;
+    font-size: 2.5rem;
+    position: absolute;
+    left: 7px;
+    top: -2px;
+    color: lighten($light-gray, 10%);
+  }
+  .control__indicator:after {
+    left: 9px;
+    top: 4px;
+    width: 8px;
+    height: 15px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+  }
+}
+
 .control__indicator:after {
   content: '';
   position: absolute;
   display: none;
 }
 
-.control input:checked ~ .control__indicator:after {
-  display: block;
+.control input:checked ~ .control__indicator:before {
+  display: none;
 }
 
-.control--checkbox {
-  .control__indicator:after {
-    left: 8px;
-    top: 4px;
-    width: 3px;
-    height: 8px;
-    border: solid #fff;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-  }
-  input:disabled ~ .control__indicator:after {
-    border-color: #7b7b7b;
-  }
+.control input:checked ~ .control__indicator:after {
+  display: block;
 }

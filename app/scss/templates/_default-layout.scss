@@ -51,7 +51,7 @@
   position: relative;
   padding: $base-spacing;
   background-color: darken($lightest-gray, 1%);
-  .radio-list & {
+  .radio-checkbox-list & {
     padding: 0;
   }
 }
