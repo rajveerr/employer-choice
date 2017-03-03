@@ -22,17 +22,7 @@ html(lang="en")
                 th#selectedFreeBenefit --
                 td.free.has-plus FREE!
               tr#vasBenefitRowStart
-                td.title(colspan='2') New All Employee Benefits
-              //- tr
-              //- tr
-              //-   th Care.com
-              //-   td.price.has-plus 0.16 
-              //-     span pe/mth
-              //- tr
-              //-   th Career and Talent Coaching
-              //-   td.price 0.24 
-              //-     span pe/mth
-              
+                td.title(colspan='2') New All Employee Benefits              
             tbody
               tr
                 th Per employee per month 
@@ -93,17 +83,23 @@ script.
   // validate form
   $("#vasBenefitsSummary").validate();
   
-  // get employerName and selected benefits
+  // display employerName and selected benefits
   $('#selectedFreeBenefit').text(sessionStorage.getItem('selectedFreeBenefit'))
   $('#numberOfEmployees').text(sessionStorage.getItem('numberOfEmployees'))
   
-  // display employerName and selected benefits
+  // display selected benefits and their price in summary table
   $(function() {
-    var s = sessionStorage.getItem('vasSelectedBenefits');
-    var match = s.split(',');
+    // benefits
+    var benefits = sessionStorage.getItem('vasSelectedBenefits');
+    var matchBenefit = benefits.split(',');
+    
+    // prices
+    var prices = sessionStorage.getItem('vasSelectedBenefitsPrice');
+    var matchPrice = prices.split(',');
+    
     var elements = $();
-    for (var a in match) {
-        elements = elements.add('<tr><th>' + match[a] + '</th>' + '<td class="price has-plus">0.00<span class="pemth">pe/mth</span></td><tr>');
+    for (var a in matchBenefit, matchPrice) {
+        elements = elements.add('<tr><th>' + matchBenefit[a] + '</th>' + '<td class="price has-plus">' + matchPrice[a] + '<span class="pemth">pe/mth</span></td><tr>');
     }
     $(elements.insertAfter('#vasBenefitRowStart'));
   })

@@ -86,6 +86,10 @@
   .error {
     left: $base-spacing*4;
   }
+  .pemth {
+    font-family: $thin-font-family;
+    margin-left: $small-spacing/3;
+  }
 }
 .free-benefits-selection {
   .free {
