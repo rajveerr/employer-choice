@@ -69,3 +69,10 @@ abbr {
     border-bottom: 1px dotted $light-gray;
     cursor: help;
 }
+
+%dollar-sign {
+  position: relative;
+  &:before {
+    content: '$';
+  }
+}
