@@ -18,7 +18,7 @@ html(lang="en")
           .card-gray
             label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
             label.control.control--checkbox
-              input#vasBenefitStudentLoanRepayment.radio(type='checkbox', name='vasBenefitCheckbox', value='Student Loan Repayment')
+              input#vasBenefitStudentLoanRepayment(type='checkbox', name='vasBenefitCheckbox', value='Student Loan Repayment')
               .control__indicator
               p 
                 span.h4 Student Loan Repayment
@@ -31,7 +31,7 @@ html(lang="en")
                 span.bullet &bull; 48% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#vasBenefitCareDotCom.radio(type='checkbox', name='vasBenefitCheckbox', value='Care.com')
+              input#vasBenefitCareDotCom(type='checkbox', name='vasBenefitCheckbox', value='Care.com')
               .control__indicator
               p 
                 span.h4 Care.com
@@ -44,7 +44,7 @@ html(lang="en")
                 span.bullet &bull; 57% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#vasBenefitHealthAdvocate.radio(type='checkbox', name='vasBenefitCheckbox', value='Health Advocate')
+              input#vasBenefitHealthAdvocate(type='checkbox', name='vasBenefitCheckbox', value='Health Advocate')
               .control__indicator
               p 
                 span.h4 Health Advocate
@@ -57,7 +57,20 @@ html(lang="en")
                 span.bullet &bull; 79% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#vasBenefitLegalServices.radio(type='checkbox', name='vasBenefitCheckbox', value='Legal Services')
+              input#freeBenefitTelemedicine(type='checkbox', name='vasBenefitCheckbox', value='Telemedicine')
+              .control__indicator
+              p 
+                span.h4 Telemedicine
+                span.price 19¢ pe/mth
+                span.productDesc Connects your employees with a board-certified, state-licensed medical provider online 24/7 to receive personalized treatment
+                  span.see-more
+                span.bullet 
+                  strong &bull; Best for:  
+                  | Active. busy lifestyles, families, Commuters or those not within a short distance to hospitals or primary care physicians, vacationers, traveling businesspeople, away at college
+                span.bullet &bull; 64% of employers pick this benefit
+            hr
+            label.control.control--checkbox
+              input#vasBenefitLegalServices(type='checkbox', name='vasBenefitCheckbox', value='Legal Services')
               .control__indicator
               p 
                 span.h4 Legal Services
@@ -70,7 +83,7 @@ html(lang="en")
                 span.bullet &bull; 59% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#vasBenefitCareerAndTalentCoaching.radio(type='checkbox', name='vasBenefitCheckbox', value='Career and Talent Coaching')
+              input#vasBenefitCareerAndTalentCoaching(type='checkbox', name='vasBenefitCheckbox', value='Career and Talent Coaching')
               .control__indicator
               p 
                 span.h4 Career and Talent Coaching
@@ -101,6 +114,13 @@ script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
+  // remove freeBenefitChosen from the VAS list
+  $('input[name="vasBenefitCheckbox"]').each(function() {
+      if ($(this).val() === sessionStorage.getItem('selectedFreeBenefit')) {
+          $(this).parent().remove();
+      }
+  });
+  
   // get employerName  
   $('#freeBenefitChosen').html(sessionStorage.getItem('selectedFreeBenefit'))
   
