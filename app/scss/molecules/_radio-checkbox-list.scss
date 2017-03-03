@@ -87,3 +87,11 @@
     left: $base-spacing*4;
   }
 }
+.free-benefits-selection {
+  .free {
+    font-family: $semiBold-font-family;
+    font-size: 2rem;
+    padding-left: $small-spacing/2;
+    color: orange;
+  }
+}

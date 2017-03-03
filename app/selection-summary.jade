@@ -21,16 +21,17 @@ html(lang="en")
               tr
                 th#selectedFreeBenefit --
                 td.free.has-plus FREE!
-              tr
+              tr#vasBenefitRowStart
                 td.title(colspan='2') New All Employee Benefits
-              tr
-                th Care.com
-                td.price.has-plus 0.16 
-                  span pe/mth
-              tr
-                th Career and Talent Coaching
-                td.price 0.24 
-                  span pe/mth
+              //- tr
+              //- tr
+              //-   th Care.com
+              //-   td.price.has-plus 0.16 
+              //-     span pe/mth
+              //- tr
+              //-   th Career and Talent Coaching
+              //-   td.price 0.24 
+              //-     span pe/mth
               
             tbody
               tr
@@ -82,20 +83,32 @@ html(lang="en")
             span.primary-actions
               button#primaryBtn(type='submit') Confirm
             span.secondary-actions.link-btn
-              a(href="employer-questions.html") Back 
+              a(href="vas-selection.html") Back 
       include includes/_product-health-advocate.jade
 script(src='javascript/vendor/jquery-3.1.0.min.js')
 script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
+  // validate form
   $("#vasBenefitsSummary").validate();
   
-  // get employerName
+  // get employerName and selected benefits
   $('#selectedFreeBenefit').text(sessionStorage.getItem('selectedFreeBenefit'))
   $('#numberOfEmployees').text(sessionStorage.getItem('numberOfEmployees'))
   
+  // display employerName and selected benefits
+  $(function() {
+    var s = sessionStorage.getItem('vasSelectedBenefits');
+    var match = s.split(',');
+    var elements = $();
+    for (var a in match) {
+        elements = elements.add('<tr><th>' + match[a] + '</th>' + '<td class="price has-plus">0.00<span class="pemth">pe/mth</span></td><tr>');
+    }
+    $(elements.insertAfter('#vasBenefitRowStart'));
+  })
   
+  // modal window
   $( ".dialog" ).dialog({
     autoOpen: false,
     show: {
@@ -112,13 +125,13 @@ script.
     $( "#healthAdvocateDialog" ).dialog('open');
   })
   
-  
+  // get selected/checked vas benefits
   $('#vasBenefitsSelection input').on('change', function() {        
     var checkedValues = $('#vasBenefitsSelection input:checkbox:checked').each(function() {
       return this;
     }).get();
     
-    // Add selected benefits to summary
+    // Add selected benefits to summary card
     $('.vas-section').show();
     var elements = $();
     for(x = 0; x < checkedValues.length; x++) {

@@ -191,11 +191,13 @@ td.dot {
     color: orange;
   }
   .price {
+    text-align: right;
     @extend %dollar-sign;
   }
   .pemth {
     font-family: $thin-font-family;
     color: orange;
+    padding-left: $small-spacing/2;
   }
   .grey {
     display: inline-block;
