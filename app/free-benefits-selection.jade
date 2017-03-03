@@ -18,7 +18,7 @@ html(lang="en")
           .card-gray
             label.hidden(for='freeBenefit') Please select a free benefit you would like to offer to the employees
             label.control.control--radio
-              input#freeBenefitHealthAdvocate.radio(type='radio', name='freeBenefitRadio', value='freeBenefitHealthAdvocate', required='required', data-msg='Please choose a free benefit')
+              input#freeBenefitHealthAdvocate.radio(type='radio', name='freeBenefitRadio', value='Health Advocate', required='required', data-msg='Please choose a free benefit')
               .control__indicator
               p 
                 span.h4 Health Advocate
@@ -31,7 +31,7 @@ html(lang="en")
                 span.bullet &bull; 79% of employers pick this benefit
             hr
             label.control.control--radio
-              input#freeBenefitTelemedicine.radio(type='radio', name='freeBenefitRadio', value='freeBenefitTelemedicine')
+              input#freeBenefitTelemedicine.radio(type='radio', name='freeBenefitRadio', value='Telemedicine')
               .control__indicator
               p 
                 span.h4 Telemedicine
@@ -44,7 +44,7 @@ html(lang="en")
                 span.bullet &bull; 64% of employers pick this benefit
             hr
             label.control.control--radio
-              input#freeBenefitLegalServices.radio(type='radio', name='freeBenefitRadio', value='freeBenefitLegalServices')
+              input#freeBenefitLegalServices.radio(type='radio', name='freeBenefitRadio', value='Legal Services')
               .control__indicator
               p 
                 span.h4 Legal Services
@@ -57,7 +57,7 @@ html(lang="en")
                 span.bullet &bull; 59% of employers pick this benefit
             hr
             label.control.control--radio
-              input#freeBenefitCareerAndTalentCoaching.radio(type='radio', name='freeBenefitRadio', value='freeBenefitCareerAndTalentCoaching')
+              input#freeBenefitCareerAndTalentCoaching.radio(type='radio', name='freeBenefitRadio', value='Career and Talent Coaching')
               .control__indicator
               p 
                 span.h4 Career and Talent Coaching
@@ -85,7 +85,13 @@ script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
-  $("#freeBenefitsSelection").validate();
+  $("#freeBenefitsSelection").validate({    
+    // set form value to local storage
+    submitHandler: function(form) {
+      sessionStorage.setItem('selectedFreeBenefit', $('input[name="freeBenefitRadio"]:checked').val());
+      form.submit();
+    }
+  });
   
   $( ".dialog" ).dialog({
     autoOpen: false,

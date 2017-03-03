@@ -85,8 +85,8 @@ html(lang="en")
         .card-blue.secondary-content#benefitChosenCard
             .free-section
               h4 Free Benefit
-              ul#freeBenefitChosen
-                li Telemedicine
+              ul
+                li#freeBenefitChosen
             .vas-section(style='display: none')
               h4 VAS Benefit
               ul#vasBenefitChosen
@@ -101,6 +101,9 @@ script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
+  // get employerName  
+  $('#freeBenefitChosen').html(sessionStorage.getItem('selectedFreeBenefit'))
+  
   $("#vasBenefitsSelection").validate();
   
   $( ".dialog" ).dialog({
