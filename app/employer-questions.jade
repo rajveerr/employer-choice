@@ -18,18 +18,18 @@ html(lang="en")
           .card-gray
             .question
               label Number of employees
-              input(type='number', name='numberOfEmployees', required='required', data-msg='Please enter total number of employees you have')
+              input#numberOfEmployees(type='number', name='numberOfEmployees', required='required', data-msg='Please enter total number of employees you have')
             .question
               label Estimated average age of Employees?
-              input(type='number', name='everageAgeOfEmployees', required='required', data-msg='Please enter everage age of employees')
+              input#everageAgeOfEmployees(type='number', name='everageAgeOfEmployees', required='required', data-msg='Please enter everage age of employees')
             .question
               label(for='majorMedical') Do you offer your employees a Major Medical insurance plan?
               label.control.control--radio
-                input#majorMedicalRadioYes.radio(type='radio', name='majorMedicalRadio', value='majorMedicalYes', required='required', data-msg='Please choose Yes or No')
+                input#majorMedicalRadioYes.radio(type='radio', name='majorMedicalRadio', value='Yes', required='required', data-msg='Please choose Yes or No')
                 .control__indicator
                 |  Yes
               label.control.control--radio
-                input#majorMedicalRadioNo.radio(type='radio', name='majorMedicalRadio', value='majorMedicalNo')
+                input#majorMedicalRadioNo.radio(type='radio', name='majorMedicalRadio', value='No')
                 .control__indicator
                 |  No
               label.error(for='majorMedicalRadio')
@@ -52,13 +52,26 @@ html(lang="en")
                 button#primaryBtn.icon-right-open(type='submit') Next
               span.secondary-actions.link-btn
                 a(href="agent-dashboard.html") Cancel 
+                
+                
 script(src='javascript/vendor/jquery-3.1.0.min.js')
 script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
 script(src='javascript/global-scripts.js')
 script.
-  $("#employerQuestions").validate();
+  // get employerName
+  $('#employerName').val(sessionStorage.getItem('employerName'))
   
+  $("#employerQuestions").validate({    
+    // set form value to local storage
+    submitHandler: function(form) {
+      sessionStorage.setItem('numberOfEmployees', $('#numberOfEmployees').val());
+      sessionStorage.setItem('everageAgeOfEmployees', $('#everageAgeOfEmployees').val());
+      sessionStorage.setItem('offerMajorMedical', $('input[name="majorMedicalRadio"]:checked').val());
+      form.submit();
+    }
+  });
+    
   // show/hide Major Medical 'Yes' follow up question
   $('#majorMedicalRadioYes').click(function(){
     $('#majorMedicalYesContainer').show();
@@ -69,7 +82,7 @@ script.
   
   // show/hide Major Medical tip when a product is selected
   $('#majorMedicalPlanName').change(function(){
-    if($(this).val() != '0'){ // or this.value == 'volvo'
+    if($(this).val() != '0'){ 
       $('#majorMedicalTip').show();
     } else if($(this).val() == '0') {
       $('#majorMedicalTip').hide();
@@ -79,4 +92,4 @@ script.
   // select all text from employer input field
   $("#editEmployerName").on("click", function () {
    $('#employerName').select();
-  });
+  });    
