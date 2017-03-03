@@ -18,7 +18,7 @@ html(lang="en")
           .card-gray
             label.hidden(for='vasBenefit') Please select the benefits you would like to offer to the employees
             label.control.control--checkbox
-              input#vasBenefitStudentLoanRepayment.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitStudentLoanRepayment')
+              input#vasBenefitStudentLoanRepayment.radio(type='checkbox', name='vasBenefitCheckbox', value='Student Loan Repayment')
               .control__indicator
               p 
                 span.h4 Student Loan Repayment
@@ -31,7 +31,7 @@ html(lang="en")
                 span.bullet &bull; 48% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#vasBenefitCareDotCom.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitCareDotCom')
+              input#vasBenefitCareDotCom.radio(type='checkbox', name='vasBenefitCheckbox', value='Care.com')
               .control__indicator
               p 
                 span.h4 Care.com
@@ -44,7 +44,7 @@ html(lang="en")
                 span.bullet &bull; 57% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#vasBenefitHealthAdvocate.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitHealthAdvocate')
+              input#vasBenefitHealthAdvocate.radio(type='checkbox', name='vasBenefitCheckbox', value='Health Advocate')
               .control__indicator
               p 
                 span.h4 Health Advocate
@@ -57,7 +57,7 @@ html(lang="en")
                 span.bullet &bull; 79% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#vasBenefitLegalServices.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitLegalServices')
+              input#vasBenefitLegalServices.radio(type='checkbox', name='vasBenefitCheckbox', value='Legal Services')
               .control__indicator
               p 
                 span.h4 Legal Services
@@ -70,7 +70,7 @@ html(lang="en")
                 span.bullet &bull; 59% of employers pick this benefit
             hr
             label.control.control--checkbox
-              input#vasBenefitCareerAndTalentCoaching.radio(type='checkbox', name='vasBenefitCheckbox', value='vasBenefitCareerAndTalentCoaching')
+              input#vasBenefitCareerAndTalentCoaching.radio(type='checkbox', name='vasBenefitCheckbox', value='Career and Talent Coaching')
               .control__indicator
               p 
                 span.h4 Career and Talent Coaching
@@ -104,7 +104,15 @@ script.
   // get employerName  
   $('#freeBenefitChosen').html(sessionStorage.getItem('selectedFreeBenefit'))
   
-  $("#vasBenefitsSelection").validate();
+  $("#vasBenefitsSelection").validate({
+    submitHandler: function(form) {
+      var selectedBenefits = $('input[name="vasBenefitCheckbox"]:checked').map(function() {
+        return this.value;
+      }).get().join(',')
+      sessionStorage.setItem('vasSelectedBenefits', selectedBenefits)
+      form.submit();
+    }
+  });
   
   $( ".dialog" ).dialog({
     autoOpen: false,
