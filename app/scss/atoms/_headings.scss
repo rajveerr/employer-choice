@@ -17,6 +17,11 @@ h1 {
     font-size: 1.8rem;
     opacity: 0.5;
   }
+  .agent-questions & {
+    @include media($above-mid) {
+      width: 74%;
+    }
+  }
 }
 
 h2 {

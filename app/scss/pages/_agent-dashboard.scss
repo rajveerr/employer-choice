@@ -6,6 +6,7 @@
 
 .agent-dashboard {
   .input-and-button-container {
+    display: block;
     margin-bottom: $base-spacing;
     border-left: 3px solid $blue;
     input {
@@ -16,9 +17,9 @@
       position: absolute;
       right: 0;
     }
-  }
-  .input-and-button-container {
-    display: block;
+    @include media($above-mid) {
+      @include span-columns(9);
+    }
   }
   .table-minimal {
     th {

@@ -14,7 +14,7 @@ $table-background: $lightest-gray;
 $table-hover-background: lighten($table-background, 1%);
 $table-stripe-background: darken($table-background, 4);
 $table-stripe-background-hover: darken($table-stripe-background, 5);
-$table-padding: $small-spacing*2 1em;
+$table-padding: $base-spacing 1rem;
 
 .table-container {
   background-color: $table-background;
@@ -33,14 +33,14 @@ $table-padding: $small-spacing*2 1em;
   caption {
     color: $gray;
     text-align: left;
-    margin: $small-spacing 0;
+    margin: $small-spacing 0 $small-spacing/3;
     font-size: 2rem;
   }
   thead {
     th,
     td {
       border-bottom: 0;
-      padding: $table-padding;
+      padding: $small-spacing $small-spacing $small-spacing/2;
       text-align: left;
       font-family: $base-font-family;
       color: $gray;
