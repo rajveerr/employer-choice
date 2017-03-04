@@ -20,19 +20,19 @@ html(lang="en")
                 td.title(colspan='2') FREE FOR ALL Benefit
               tr
                 th#selectedFreeBenefit --
-                td.free.has-plus FREE!
+                td.free FREE!
               tr#vasBenefitRowStart
                 td.title(colspan='2') New All Employee Benefits              
             tbody
               tr
                 th Per employee per month 
-                td.price.pepp-total 0.40
+                td.perEmployeePerMonth.price.pepp-total --
               tr
                 th Total premium per month
                 td.total-premium 
                   span#numberOfEmployees.grey --
                   span.grey *
-                  span#peppTotal.price.grey 0.40
+                  span.perEmployeePerMonth.price.grey --
                   span.grey =
                   span#totalPremiumAmount.price.total 15.2
         
@@ -87,7 +87,7 @@ script.
   $('#selectedFreeBenefit').text(sessionStorage.getItem('selectedFreeBenefit'))
   $('#numberOfEmployees').text(sessionStorage.getItem('numberOfEmployees'))
   
-  // display selected benefits and their price in summary table
+  // display selected benefits and their price calculated in summary table
   $(function() {
     // benefits
     var benefits = sessionStorage.getItem('vasSelectedBenefits');
@@ -99,9 +99,21 @@ script.
     
     var elements = $();
     for (var a in matchBenefit, matchPrice) {
-        elements = elements.add('<tr><th>' + matchBenefit[a] + '</th>' + '<td class="price has-plus">' + matchPrice[a] + '<span class="pemth">pe/mth</span></td><tr>');
+        elements = elements.add('<tr><th>' + matchBenefit[a] + '</th>' + '<td class="price"><span class="has-plus">' + matchPrice[a] + '</span><span class="pemth">pe/mth</span></td><tr>');
     }
     $(elements.insertAfter('#vasBenefitRowStart'));
+    
+    // sum all vas benefits 
+    var sum = 0;
+    $('.has-plus').each(function(){
+        sum += parseFloat($(this).text());
+    });
+    $('.perEmployeePerMonth').html(sum)
+    
+    // display total premium amount
+    totalEmployees = sessionStorage.getItem('numberOfEmployees');
+    premiumTotal = totalEmployees * sum;
+    $('#totalPremiumAmount').html(premiumTotal)
   })
   
   // modal window
