@@ -1,11 +1,11 @@
 doctype html
-html(lang="en")
+html(lang="en") 
   head
   title
     | Aflac : Employer Choice
   meta(http-equiv="content-type", content="#{contentType}; charset=UTF-8") 
   meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-  link(href='css/screen.css', rel='stylesheet')
+  link(href='css/screen.css', rel='stylesheet') 
   body.agent-dashboard
     include includes/_header-and-main-nav.jade 
     include includes/_flash.jade    
@@ -63,7 +63,7 @@ html(lang="en")
           table.table-minimal.benefits
             caption Aflac All Employee Choices
             tbody
-              tr#healthAdvocateDialogOpner
+              tr.modalOpner(href='product-health-advocate.html', name='Health Advocate') 
                 th Health Advocate
                 td 19¢ 
                   abbr(title='Per employee per month') pe/mth
@@ -87,9 +87,7 @@ html(lang="en")
                 th Student Loan Repayment
                 td 31¢ 
                   abbr(title='Per employee per month') pe/mth    
-      
-    include includes/_tip-colonial-1.jade
-    include includes/_product-health-advocate.jade  
+    .dialog
               
 script(src='javascript/vendor/jquery-3.1.0.min.js')
 script(src='javascript/vendor/jquery-ui.min.js')
@@ -100,11 +98,11 @@ script.
     submitHandler: function(form) {
       // set employer name to local storage
       sessionStorage.setItem('employerName', $('#employerName').val());
-      form.submit();
+      form.submit(); 
     }
   });
   
-  
+  // dialog settings
   $( ".dialog" ).dialog({
     autoOpen: false,
     show: {
@@ -114,17 +112,21 @@ script.
     hide: {
       effect: "explode",
       duration: 10
-    }
+    },
+    modal: true    
+  });
+    
+  // open dialog
+  $('.modalOpner').click(function(e){ 
+    e.preventDefault();    
+    var url = $(this).attr('href');    
+    $('.dialog').load(url);
+    $('.dialog').dialog({ title: $(this).attr('name') });
+    $('.dialog').dialog('open'); 
   });
   
-  $('#alertOpener').click(function(){
-    $( "#alertDialog" ).dialog('open');
-  })
   
-  $('#healthAdvocateDialogOpner').click(function(){
-    $( "#healthAdvocateDialog" ).dialog('open');
-  })
-  
+  // close tip
   $('.close-banner').click(function(){
     $('#flashBanner').fadeOut( "fast" );
   }) 

@@ -74,7 +74,6 @@ html(lang="en")
               button#primaryBtn(type='submit') Confirm
             span.secondary-actions.link-btn
               a(href="vas-selection.html") Back 
-      include includes/_product-health-advocate.jade
 script(src='javascript/vendor/jquery-3.1.0.min.js')
 script(src='javascript/vendor/jquery-ui.min.js')
 script(src='javascript/vendor/jquery.validate.min.js')
@@ -127,11 +126,7 @@ script.
       effect: "explode",
       duration: 10
     }
-  });
-  
-  $('#healthAdvocateDialogOpner').click(function(){
-    $( "#healthAdvocateDialog" ).dialog('open');
-  })
+  });  
   
   // get selected/checked vas benefits
   $('#vasBenefitsSelection input').on('change', function() {        
