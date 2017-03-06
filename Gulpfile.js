@@ -1,13 +1,14 @@
 "use strict";
 
 var gulp = require("gulp"),
-		browserSync = require("browser-sync"),
+		// browserSync = require("browser-sync"),
 		sass = require("gulp-sass"),
 		bourbon = require("node-bourbon").includePaths,
 		neat = require("node-neat").includePaths,
 		refills = require("node-refills").includePaths,
 		jade = require('gulp-jade'),
-		images = require('gulp-image');
+		images = require('gulp-image'),
+		connect = require('gulp-connect');
 
 
 // Optimize and copy images
@@ -48,9 +49,9 @@ gulp.task("sass", function() {
 				includePaths: refills
 			}))
 			.pipe(gulp.dest("dist/css"))
-			.pipe(browserSync.reload({
-				stream: true
-			}))
+			// .pipe(browserSync.reload({
+			// 	stream: true
+			// }))
 });
 
 // Compile jade template to html
@@ -58,42 +59,39 @@ gulp.task('templates', function() {
     return gulp.src('./app/**/*.jade')
         .pipe(jade())
         .pipe(gulp.dest('./dist/'))
-				.pipe(browserSync.reload({
-					stream: true
-				}))
+				// .pipe(browserSync.reload({
+				// 	stream: true
+				// }))
 });
 
 // Live reload anytime a file changes
-gulp.task("watch", ["browserSync", "sass", "templates"], function() {
+gulp.task("watch", ["sass", "templates"], function() {
 	gulp.watch("app/scss/**/*.scss", ["sass"]);
 	gulp.watch('app/*.jade',['templates']);
 
 });
 
 //default gulp command
-gulp.task('default', ['sass', 'templates' ,'browserSync', 'watch'], function () {
+gulp.task('default', ['webserver', 'sass', 'templates', 'watch'], function () {
 });
 
 // Gulp Compile
 gulp.task('compile', ['javascript', 'templates', 'sass' ,'images', 'fonts'], function () {
 });
 
-
-// Spin up a server
-gulp.task("browserSync", function() {
-	browserSync({
-		open: true,
-		server: {
-			baseDir: "dist",
-			port: process.env.PORT
-		}
-	})
+gulp.task('webserver', function() {
+	connect.server({
+		root: 'dist',
+		port: process.env.PORT || 5000
+	});
 });
 
-// gulp.task('serve-prod', serve({
-//   root: ['public', 'build'],
-//   port: $PORT,
-//   middleware: function(req, res) {
-//     // custom optional middleware
-//   }
-// }));
+// Spin up a server
+// gulp.task("browserSync", function() {
+// 	browserSync({
+// 		open: true,
+// 		server: {
+// 			baseDir: "dist",
+// 		}
+// 	})
+// });
