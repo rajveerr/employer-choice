@@ -4,12 +4,10 @@
   "description": "A prototype for Employer Choice tool",
   "main": "Gulpfile.js",
   "dependencies": {
-    "gulp-sass": "^2.3.2",
-    "node-sass": "^4.5.0"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
+    "gulp-sass": "^2.3.2",
+    "node-sass": "^4.5.0",  
+    "browser-sync": "^2.11.1",
     "gulp-image": "^2.7.5",
     "gulp-jade": "^1.1.0",
     "gulp-sass": "^3.1.0",
