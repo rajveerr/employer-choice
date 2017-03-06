@@ -53,6 +53,15 @@ gulp.task("sass", function() {
 			}))
 });
 
+//server
+gulp.task('serve', [], function() {
+  // .init starts the server
+  browserSync.init({
+    server: "dist",
+    port: 5000
+  });
+});
+
 // Compile jade template to html
 gulp.task('templates', function() {
     return gulp.src('./app/**/*.jade')
@@ -71,7 +80,7 @@ gulp.task("watch", ["browserSync", "sass", "templates"], function() {
 });
 
 //default gulp command
-gulp.task('default', ['sass', 'templates' ,'browserSync', 'watch'], function () {
+gulp.task('default', ['serve', 'sass', 'templates' ,'browserSync', 'watch'], function () {
 });
 
 // Gulp Compile
