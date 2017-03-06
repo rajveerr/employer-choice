@@ -65,12 +65,6 @@ gulp.task('templates', function() {
 
 // Live reload anytime a file changes
 gulp.task("watch", ["browserSync", "sass", "templates"], function() {
-	browserSync({
-      port: 5000,
-      server: {
-          baseDir: "./"
-      }
-  });
 	gulp.watch("app/scss/**/*.scss", ["sass"]);
 	gulp.watch('app/*.jade',['templates']);
 
