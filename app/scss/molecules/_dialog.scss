@@ -15,6 +15,9 @@
     left: 10%;
     padding: 0 $base-spacing;
     margin: 0 $base-spacing;
+    @include media($above-mid) {
+      padding: 0 $base-spacing*8;
+    }
   }
   .ui-dialog-content {
     padding-bottom: $base-spacing;
@@ -85,5 +88,8 @@
   }
   h4 {
     margin-bottom: $small-spacing/2;
+  }
+  textarea {
+    width: 100%;
   }
 }

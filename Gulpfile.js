@@ -55,7 +55,7 @@ gulp.task("sass", function() {
 
 // Compile jade template to html
 gulp.task('templates', function() {
-    return gulp.src('./app/*.jade')
+    return gulp.src('./app/**/*.jade')
         .pipe(jade())
         .pipe(gulp.dest('./dist/'))
 				.pipe(browserSync.reload({
@@ -75,7 +75,7 @@ gulp.task('default', ['sass', 'templates' ,'browserSync', 'watch'], function () 
 });
 
 // Gulp Build
-gulp.task('build', ['javascript', 'sass' ,'images', 'fonts'], function () {
+gulp.task('build', ['javascript', 'templates', 'sass' ,'images', 'fonts'], function () {
 });
 
 
