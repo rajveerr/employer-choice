@@ -5,12 +5,11 @@
   "main": "Gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.3.2",
-    "node-sass": "^4.5.0",  
+    "gulp-sass": "^3.1.0",
+    "node-sass": "^4.5.0",
     "browser-sync": "^2.11.1",
     "gulp-image": "^2.7.5",
     "gulp-jade": "^1.1.0",
-    "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.5",
     "node-bourbon": "^4.2.8",
     "node-neat": "^2.0.0-beta.0",
@@ -28,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/rajveerr/employer-choice/issues"
   },
-  "homepage": "https://github.com/rajveerr/employer-choice#readme"
+  "homepage": "https://github.com/rajveerr/employer-choice#readme",
+  "devDependencies": {
+
+  }
 }

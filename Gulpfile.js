@@ -82,10 +82,18 @@ gulp.task('compile', ['javascript', 'templates', 'sass' ,'images', 'fonts'], fun
 // Spin up a server
 gulp.task("browserSync", function() {
 	browserSync({
-		// port: 5000,
-		open: false,
+		open: true,
 		server: {
-			baseDir: "dist"
+			baseDir: "dist",
+			port: process.env.PORT
 		}
 	})
 });
+
+// gulp.task('serve-prod', serve({
+//   root: ['public', 'build'],
+//   port: $PORT,
+//   middleware: function(req, res) {
+//     // custom optional middleware
+//   }
+// }));
