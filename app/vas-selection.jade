@@ -10,6 +10,7 @@ html(lang="en")
     include includes/_header-and-main-nav.jade
     .wrapper
       .content-head
+        span#employerName.above-title
         h1 Choose additional ALL EMPLOYEE benefits
         p.sub-heading You’ve picked “Telemedicine” as your FREE FOR ALL benefit.
         p.sub-heading You can also choose as many of these Aflac group plan benefits for ALL your employees, regardless of whether they select other Aflac products.
@@ -127,7 +128,8 @@ script.
       }
   });
   
-  // get employerName  
+  // get employerName  and benefits chosen
+  $('#employerName').text(sessionStorage.getItem('employerName'))
   $('#freeBenefitChosen').html(sessionStorage.getItem('selectedFreeBenefit'))
   
   $("#vasBenefitsSelection").validate({

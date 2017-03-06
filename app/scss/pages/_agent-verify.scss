@@ -12,10 +12,18 @@ body.agent-verify {
     margin: 0 auto;
     padding: 3em $small-spacing;
     min-width: 90%;
-    h1,
-    .input-and-button-container {
+    h1 {
       text-align: center;
     }
+    .input-and-button-container {
+      text-align: center;
+      input {
+        @include media($small) {
+          width: 20rem;
+        }
+      }
+    }
+
     h1 {
       margin-bottom: $small-spacing;
     }

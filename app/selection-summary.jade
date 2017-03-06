@@ -10,7 +10,8 @@ html(lang="en")
     include includes/_header-and-main-nav.jade
     .wrapper
       .content-head
-        h1 Summary
+        span#employerName.above-title
+        h1 Benefits summary
         p.sub-heading Here’s what you have picked! Find out how this is going to help grow your organization in future.
       form#vasBenefitsSummary(action='confirmation.html', novalidate='novalidate')        
         .primary-content
@@ -83,6 +84,7 @@ script.
   $("#vasBenefitsSummary").validate();
   
   // display employerName and selected benefits
+  $('#employerName').text(sessionStorage.getItem('employerName'))
   $('#selectedFreeBenefit').text(sessionStorage.getItem('selectedFreeBenefit'))
   $('#numberOfEmployees').text(sessionStorage.getItem('numberOfEmployees'))
   

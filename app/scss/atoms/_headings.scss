@@ -37,12 +37,14 @@ h3 {
 }
 
 .sub-heading {
-  color: $light-gray;
   .note {
     display: block;
     font-family: $thin-font-family;
     font-size: 1.4rem;
     padding-top: $small-spacing;
     margin-bottom: $base-spacing;
+  }
+  &:last-child {
+      margin-bottom: $base-spacing;
   }
 }

@@ -1,8 +1,3 @@
-.main-body {
-  @include outer-container();
-  position: relative;
-}
-
 .wrapper,
 .flash .wrap,
 .header-container .wrap {
@@ -24,6 +19,18 @@
 .content-head {
   h1 {
     padding-top: $small-spacing;
+  }
+  .above-title {
+    font-family: $thin-font-family;
+    color: $light-gray;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    position: absolute;
+    & ~ h1 {
+      padding-top: 1.8rem;
+      margin-top: $small-spacing;
+      margin-bottom: $small-spacing/2;
+    }
   }
 }
 

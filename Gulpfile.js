@@ -69,7 +69,7 @@ gulp.task('default', ['webserver', 'compile'], function () {
 });
 
 // Gulp Compile
-gulp.task('compile', ['javascript', 'templates', 'sass' ,'images', 'fonts'], function () {
+gulp.task('compile', ['javascript', 'templates', 'sass' ,'images', 'fonts', 'watch'], function () {
 });
 
 gulp.task('webserver', function() {
