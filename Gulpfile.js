@@ -74,8 +74,8 @@ gulp.task("watch", ["browserSync", "sass", "templates"], function() {
 gulp.task('default', ['sass', 'templates' ,'browserSync', 'watch'], function () {
 });
 
-// Gulp Build
-gulp.task('build', ['javascript', 'templates', 'sass' ,'images', 'fonts'], function () {
+// Gulp Compile
+gulp.task('compile', ['javascript', 'templates', 'sass' ,'images', 'fonts'], function () {
 });
 
 
