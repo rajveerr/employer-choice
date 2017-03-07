@@ -43,7 +43,7 @@ html(lang="en")
           .radio-checkbox-list.engagement-choice
             label.hidden(for='popsEngagement') Please select the made of engagament for Aflac agent to engage with your employees
             label.control.control--checkbox
-              input#popsEngagementGroupEmail.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementGroupEmail', required='required', data-msg='Please select the made of engagament for Aflac agent to engage with your employees')
+              input#popsEngagementGroupEmail.radio(type='checkbox', name='popsEngagementCheckbox', value='popsEngagementGroupEmail', required='required', data-msg='Please select')
               .control__indicator
               p 
                 span.h4 Group email
@@ -113,7 +113,7 @@ script.
     
     // display total premium amount
     totalEmployees = sessionStorage.getItem('numberOfEmployees');
-    premiumTotal = totalEmployees * sum;
+    premiumTotal = parseFloat(totalEmployees * sum).toFixed(2);
     $('#totalPremiumAmount').html(premiumTotal)
   })
   

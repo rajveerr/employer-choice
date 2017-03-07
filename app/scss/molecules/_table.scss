@@ -137,6 +137,9 @@ td.dot {
   background-color: transparent;
   padding: 0 $small-spacing/2;
   margin-bottom: $base-spacing*2;
+  @include media($small) {
+    padding: 0;
+  }
   thead {
     th, td {
       padding: 0 1.8rem;
@@ -149,6 +152,9 @@ td.dot {
       color: black;
       font-size: 2.6rem;
       padding: $small-spacing/2 1.8rem 2rem;
+      @include media($small) {
+        font-size: 2rem;
+      }
     }
     .title {
       font-size: 1.6rem;

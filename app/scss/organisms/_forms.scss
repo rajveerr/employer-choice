@@ -78,10 +78,7 @@ label {
   font-family: $semiBold-font-family;
   display: block;
   color: lighten($dark-gray, 10%);
-  padding-bottom: $small-spacing/2;
-  span {
-    font-family: $thin-font-family;
-  }
+  padding-bottom: $small-spacing/2;  
   &.error {
     font-family: $thin-font-family;
     font-size: 1.6rem;

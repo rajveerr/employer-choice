@@ -1,4 +1,5 @@
 .radio-checkbox-list {
+  color: black;
   &.engagement-choice {
     padding: 0 $small-spacing/2;
   }
@@ -18,6 +19,7 @@
     margin-top: 0;
     min-height: 1.8rem;
     font-size: 1.6rem;
+    font-family: $base-font-family;
     padding: $small-spacing $base-spacing $small-spacing/2 $base-spacing*2;
     @include media($above-small) {
       font-size: 1.8rem;
@@ -33,9 +35,9 @@
       background-color: darken($lightest-gray, 5%)
     }
     .h4 {
-        font-family: $base-font-family;
         color: $dark-gray;
         font-size: 2.4rem;
+        font-family: $semiBold-font-family;
     }
     .price {
       position: relative;
@@ -60,12 +62,12 @@
     }
     .productDesc {
       padding: 0.8rem 0 $small-spacing 0;
+
     }
     .bullet {
       padding: 0 0 $small-spacing/2 $small-spacing/2;
     }
     strong {
-      font-family: $light-font-family;
     }
     .see-more {
       position: relative;
@@ -87,13 +89,12 @@
     left: $base-spacing*4;
   }
   .pemth {
-    font-family: $thin-font-family;
     margin-left: $small-spacing/3;
   }
 }
 .free-benefits-selection {
   .free {
-    font-family: $semiBold-font-family;
+    font-family: $bold-font-family;
     font-size: 2rem;
     padding-left: $small-spacing/2;
     color: orange;
