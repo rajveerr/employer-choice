@@ -26,8 +26,10 @@ input[type='tel'], input[type='email'], input[type='search'], textarea {
   }
 }
 
-input[type='number'] {
-  max-width: 15rem;
+@include media($small) {
+  input[type='number'] {
+    max-width: 15rem;
+  }
 }
 
 .file-upload {
