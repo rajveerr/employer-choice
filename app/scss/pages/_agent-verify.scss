@@ -26,6 +26,9 @@ body.agent-verify {
 
     h1 {
       margin-bottom: $small-spacing;
+      font-family: $semiBold-font-family;
+      line-height: 3rem;
+      font-size: 2.4rem;
     }
     @include media($above-small) {
       min-width: 80%;
